@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Testemunho</title>
+    <style>
+        .S1 {
+            position: relative;
+            width: 100%;
+            min-height: 100svh;
+            background: #76B7E3;
+        }
+
+        .divst {
+            position: absolute;
+            top: 214px;
+            left: 107px;
+            right: 263px;
+            bottom: 398px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divst h1 {
+            color: #FDFAFF;
+            font-size: 92px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 85px;
+            margin: 0;
+        }
+
+        .divart {
+            position: absolute;
+            top: 493px;
+            left: 106.92px;
+            right: 118.8px;
+            height: 172px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divart h1 {
+            color: #FDFAFF;
+            font-size: 45px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 54px;
+            margin: 0;
+            text-align: left;
+        }
+
+     .fle {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 30px;
+    margin-right: 57px;
+    margin-left: 57px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .lineAspa {
+    width: 100%;
+    height: 2px;
+    border: 3px solid #333;
+  }
+
+  .lineAspa2 {
+    width: 100%;
+    height: 2px;
+    border: 3px solid #333;
+  }
+
+  .aspas {
+    color: #303036;
+    text-align: center;
+    font-size: 96px;
+    font-family: Alegreya;
+    line-height: 45px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  @media screen and (max-width: 768px) {
+    .fle {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .footT{
+        display: none;
+    }
+  }
+        .gridaspa {
+            margin-top: 100px;
+            margin-left: 57px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-auto-rows: minmax(646px, auto);
+            gap: 118px;
+        }
+        @media screen and (max-width: 768px) {
+    .gridaspa {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 75px;
+      margin-left: 20px;
+    }
+    .footT{
+        display: none;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .gridaspa {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 75px;
+      margin-left: 20px;
+    }
+    .footT{
+        display: none;
+    }
+  }
+        .person1,
+        .person3
+        {
+            position: relative; /* Add relative positioning */
+            border: 1px solid #000;
+            background: rgba(118, 183, 227, 0.20);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            width: 534px;
+            
+        }
+        .person2,
+        .person4 {
+            position: relative; /* Add relative positioning */
+            border: 1px solid #000;
+            background:#D9674933;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            width: 534px;
+        }
+
+        .gridaspa img {
+            position: absolute; /* Add absolute positioning */
+            top: -54px; /* Adjust the negative top value to position the image outside the container */
+            left: 53px; /* Adjust the left value as desired */
+            width: 214px;
+            height: 214px;
+            flex-shrink: 0;
+            border-radius: 214px;
+            border: 1px solid #000;
+        }
+
+        .seccao2 {
+            background: #FFF;
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+        }
+        .aspa{
+            color: #303036;
+    text-align: center;
+    font-size: 128px;
+    font-family: Alegreya;
+    font-weight: 500;
+    line-height: 45px;
+    position: absolute;
+    width: 158.669px;
+    height: 166px;
+    margin-left: 300px;
+    margin-top: 60px;
+        }
+        .locnamegrid{
+            display: grid;
+            grid-template-columns: 420px;
+            gap: 10px;
+            
+            margin-top: 190px;
+            margin-left: 53px;
+        }
+        .nameL{
+            color: #303036;
+font-size: 35px;
+font-family: Alegreya;
+line-height: 45px;
+        }
+        .loc{
+            color: #303036;
+font-size: 35px;
+font-family: Alegreya;
+line-height: 45px;
+        }
+        .textL{
+            color: #303036;
+font-size: 35px;
+font-family: Alegreya;
+font-style: italic;
+font-weight: 500;
+line-height: 45px;
+        }
+        .locnamegrid > div:last-child {
+  margin-top: 32px;
+}
+    </style>
+    <%- include("../views/partials/head.ejs") %>
+</head>
+<body>
+    <div class="S1">
+        <%- include("../views/partials/navBar.ejs") %>
+        <div class="divst">
+            <h1 class="st">Testimonies</h1>
+        </div>
+        <div class="divart">
+            <h1>Lorem ipsum dolor sit amet, cestibulum dictum.</h1>
+        </div>
+    </div>
+    <div class="seccao2" >
+       
+        <% if (opinioes.length > 0) { %>
+            <div class="fle">
+                <div class="lineAspa"></div>
+                <div class="aspas">“ ”</div>
+                <div class="lineAspa2"></div>
+            </div>
+            <% var numGrids = Math.ceil(opinioes.length/4); %>
+            <% for (var i = 0; i < numGrids; i++) { %>
+              <div class="gridaspa" style="margin-left: 130px;">
+                <% for (var j=i*4; j < Math.min((i+1)*4, opinioes.length); j++) { %>
+                  <div class="person<%= j%4+1%>">
+                    <img src="<%=opinioes[j].image%>" alt="" srcset="">
+                    <div class="aspa">“</div>
+                    <div class="locnamegrid">
+                      <div class="nameL"><%= opinioes[j].name %></div>
+                      <div class="locn"><%= opinioes[j].place %></div>
+                      <div class="textL"><%= opinioes[j].content %></div>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+              <div class="fle">
+                <div class="lineAspa"></div>
+                <div class="aspas">“ ”</div>
+                <div class="lineAspa2"></div>
+            </div>
+            <% } %>
+          <% } %>
+          <%- include("../views/partials/footer.ejs") %>
+          </div>
+          </body>
+          </html>
+      
+          
+          
+          

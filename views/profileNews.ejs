@@ -1,0 +1,194 @@
+<!-- views/profileNews.ejs -->
+<!DOCTYPE html>
+
+ 
+<html lang="en">
+<head>
+  <title><%= news.title %></title>
+    <style>
+        .S1yellow {
+          min-width: 100%;
+          min-height: 100svh;
+          background: #0BE3A3;
+        }
+        .flexArch{
+          margin-left: 80px;
+          display: flex;
+          flex-direction: column;
+          display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex-grow: 0;
+      flex-shrink: 1;
+        }
+
+        .s2y {
+          position: relative;
+          width: 100%;
+          min-height: 100vh;
+          min-height: 100svh;
+          background: #FFFF;
+        }
+      
+      
+        .divsty h1 {
+          color: #303036;
+          font-size: 92px;
+          font-family: Montserrat;
+          font-weight: 300;
+          line-height: 85px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .divarty {
+          min-width: 459px;
+          min-height: 123px;
+        }
+      
+        .divarty h1 {
+          color: #303036;
+          font-size: 45px;
+          font-family: Montserrat;
+          font-weight: 300;
+          line-height: 54px;
+          margin: 0;
+          text-align: left;
+        }
+
+.navigation a{
+  color: #303036;
+font-size: 20px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+
+
+.navigation a:hover{
+  color: #303036;
+font-size: 20px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.areaarch a:focus {
+  outline: none;
+  text-decoration: none !important;
+      color: inherit;
+}
+
+.navigation{
+  position: absolute;
+display: flex;
+  flex-wrap: wrap;
+
+  justify-content:flex-start;
+  align-items: flex-start;
+  bottom: 0;
+  flex: 1;
+  width: 100%;
+}
+.tifw{
+  display: flex;justify-content: center;align-items: center;
+    width: 25%;
+  color: #303036;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+a, li {
+      text-decoration: none !important;
+    }
+    a:hover, li:hover{
+      text-decoration: none !important;
+    }
+    a:visited , li:hover{
+      text-decoration: none !important;
+    }
+      </style> 
+    <%- include("../views/partials/head.ejs") %>
+    
+</head>
+<body>
+    <div class="S1yellow">
+      <header>
+        <%- include("../views/partials/navBar.ejs") %>
+    </header>
+    <div class="flexArch">
+        <div class="divsty">
+          <h1 class="sty">NEWS & EVENTS</h1>
+        </div>
+        <div class="divarty">
+          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.Lorem500 Lorem500</h1>
+        </div>
+    </div>
+    <div class="fS1" style="display: flex; position: absolute; bottom: 0; flex-direction: row; width: 100%; min-height: 100px;">
+      <div class="tifw if-1" style="background: #76B7E3;"><a href="/#divH" style="text-decoration: none;outline: none;color: inherit;"> Co-Culture Space / Lab</a></div>  
+     <div class="tifw if-2" style="background: #C981F5; "> <a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Glocal Coffee Breaks</a></div>
+      <div class="tifw if-3" style="background: #FF78A9;"><a href="/#team-section" style="text-decoration: none;outline: none;color: inherit;">Intercultural Workshops</a></div>
+      <div class="tifw if-4" style="background: #303036;;color: #FDFAFF;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;"><a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Reports</a></div>
+      <div class="tifw i-nav" class="areaarch" >
+        <form action="/search" method="post">
+          <svg xmlns="http://www.w3.org/2000/svg" width="170" height="34" viewBox="0 0 136 34" fill="none" style="position: relative;">
+            <path d="M119.031 1H16.8549C8.09849 1 1 8.13546 1 16.9375C1 25.7395 8.09849 32.875 16.8549 32.875H119.031C127.788 32.875 134.886 25.7395 134.886 16.9375C134.886 8.13546 127.788 1 119.031 1Z" stroke="#303036" stroke-width="2"/>
+            <foreignObject x="10" y="5" width="90" height="24">
+              <input type="text" id="searchInput" style="border: none; background: transparent; min-width: 100px; outline:none" name="query" placeholder="Search"/>
+            </foreignObject>
+            <foreignObject x="120" y="8" width="20" height="20">
+              <button style="background: none; border: none; position: absolute; top: 0; right: 9px;" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" style="left: -1px; position: absolute;">
+                  <path d="M7.87703 14.3088C11.3364 14.3088 14.1408 11.4898 14.1408 8.01244C14.1408 4.53505 11.3364 1.71606 7.87703 1.71606C4.41766 1.71606 1.61328 4.53505 1.61328 8.01244C1.61328 11.4898 4.41766 14.3088 7.87703 14.3088Z" stroke="#303036" stroke-width="2.222" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15.7064 15.8828L12.3008 12.4595" stroke="#303036" stroke-width="2.222" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </foreignObject>
+          </svg>
+        </form>       
+      </div>
+    </div>
+
+    </div>
+    <div class="sc2" style="height: 100svh; background-color:#FFF;">
+      <div style="color: #303036;
+      font-family: Montserrat;
+      font-size: 100px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 100px;margin-top: 100px; margin-left: 76px;">
+        <div style="width: 100px; height: 3px; border: 3px solid #303036; display: inline-block;"></div>
+        <p style="display: inline-block;"><%=news.title%></p>
+      </div>
+      <div class="sec-content" style="color: #303036;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px; /* 156.25% */ flex-direction: row;margin-left: 100px;margin-right: 111px;margin-top: 75px; min-height: 693px; display: flex;gap: 55px;">
+        <div class="sec-img" style="border:3px solid #303036; min-width:456px;background: #0BE3A3; "></div>
+        <div class="sec-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis reprehenderit tenetur. Illo nemo natus soluta? Illum quas est vero odit officia nesciunt qui temporibus repellat minima. Deserunt officia pariatur mollitia cum, perspiciatis ipsa praesentium delectus earum vitae ratione corporis, architecto nesciunt aliquam tempore temporibus excepturi ut, tenetur modi quidem optio dolore. Ea, repellat corrupti nihil aliquid vero quod molestias nam dolorum quaerat veritatis soluta quae ab facere natus quos fugiat eius porro illum! Libero mollitia soluta consectetur architecto obcaecati sint, quod cumque rerum blanditiis est? Optio, consectetur labore, sapiente ad asperiores quas eos mollitia quo at molestias molestiae ipsa fugit? Repudiandae commodi magnam sint repellendus recusandae rerum nemo hic fuga cupiditate quaerat, sed blanditiis a magni, animi, impedit veritatis assumenda natus similique alias laboriosam earum corrupti ratione odit neque. Praesentium reprehenderit quod ab quo rerum nesciunt? Molestias, maxime consectetur. Sapiente quaerat animi tempore unde, amet dolor corporis accusamus veritatis repellat corrupti, porro cum placeat tenetur! Fuga cupiditate deleniti perspiciatis maxime vero consequatur odit laborum molestias ex, accusantium aliquid nostrum praesentium saepe sit quidem illo sapiente corporis rerum blanditiis! Laboriosam cumque pariatur ipsum eos facere. Nulla similique illo, sunt veritatis voluptates, ipsum exercitationem tempora, dolores veniam iste maxime incidunt inventore totam cum voluptatibus voluptatem dolor debitis excepturi porro mollitia aut amet eum dolorum. Dolores ab libero voluptatem, tenetur explicabo quia tempora eos cupiditate, officiis architecto iusto consectetur nam ducimus nulla illo. Iusto sed nemo eaque, molestias ratione culpa pariatur rem error? Eum soluta accusantium quasi tempora impedit velit ea quo quisquam nisi nostrum similique natus harum ducimus eius aliquid quibusdam unde assumenda, doloribus, expedita tempore sapiente maxime molestias? Accusamus dolorem aliquam cum dolores enim iure optio quis veniam eaque impedit ipsum cupiditate ex, officiis quaerat. Dolorem totam autem velit saepe quasi, sequi labore aut. Ea iusto alias aperiam, aspernatur dolor maxime libero numquam minima pariatur aliquam itaque voluptates illum nesciunt adipisci dicta, facere impedit totam, asperiores expedita. Rerum nemo a consequatur expedita eveniet porro. Itaque impedit architecto aperiam rerum ab? Velit eaque eum ipsum officia magnam quidem nam earum placeat ab, molestiae sit nisi sint unde ipsam adipisci. Eaque fuga, quae ipsa fugit placeat libero accusantium harum repellat accusamus esse reprehenderit porro dicta! Sint, deserunt vero a vitae beatae et quibusdam maxime iure earum officia impedit voluptate, eaque corporis consequatur error optio quo expedita dolores, reprehenderit aperiam nostrum cum fugit? Aspernatur excepturi cum quia consectetur quaerat dolore possimus sequi iste.</div>
+      </div>
+      <div style="color: #303036;
+      font-family: Montserrat;
+      font-size: 100px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 100px;margin-top: 100px; margin-left: 76px;">
+        <div style="width: 100px; height: 3px; border: 3px solid #303036; display: inline-block;"></div>
+        <p style="display: inline-block;"><%=news.title%></p>
+      </div>
+    </div>
+</body>
+</html>

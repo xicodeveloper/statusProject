@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../views/partials/head") %>
+    <title>Document</title>
+</head>
+<style>
+    
+ 
+
+    #sectionDois {
+        height: 180vh; /* Adjust the height as needed */
+        background: white; /* Change the background color to white */
+        width: 100%;
+        position: relative;
+    }
+
+    #sectionDois .sec2Tit {
+        margin-top: 86px;
+        text-align: center;
+        margin-left: 105px;
+    }
+    #sectionTres .sec2Tit {
+        text-align: center;
+    }
+
+
+ 
+.S1 {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: #76B7E3;
+        }
+
+        .divst1 {
+            position: absolute;
+            top: 214px;
+            left: 107px;
+            right: 263px;
+            bottom: 398px;
+            width: 1031px;
+            height: 256px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divst1 h1 {
+            color: #FDFAFF;
+            font-size: 92px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 85px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .divart1 {
+            position: absolute;
+            top: 493px;
+            left: 106.92px;
+            right: 118.8px;
+            height: 172px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divart1 h1 {
+            color: #FDFAFF;
+            font-size: 45px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 54px;
+            margin: 0;
+            text-align: left;
+        }
+        .itm{
+            border-top: 3px solid #D96749;
+          border-right: none;
+          border-bottom: none;
+          border-left: none;
+        }
+        .seccao2 {
+            background:#FDFAFF;
+            position: relative;
+            height: 130vh;
+            width: 100%;
+        }
+       
+        .seccao3 {
+            background: #D96749;;
+            height: 130vh;
+            width: 100%;
+        }
+        .seccao6 {
+            position: relative;
+            background: #FDFAFF;;
+            height: 130vh;
+            width: 100%;
+        }
+        .seccao4 {
+            position: relative;
+            width: 100%;
+            height: 135vh;
+         background: #FDFAFF;
+        }
+        .seccao5 {
+            position: relative;
+            width: 100%;
+            height: 130vh;
+         background: #76B7E3;;
+        }
+        .gbox{
+            background-color: #FDFAFF;
+            position: relative;
+            margin-top: 86px;
+            margin-left: 110px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            grid-column-gap: 110px;
+            grid-row-gap: 40px;
+
+    
+        }
+        #sectionDois{
+            width: 100%;
+            height: 170vh;
+            background-color: #FDFAFF;
+
+        }
+        .titlebig{
+         grid-column: 1/5;   
+         color: #303036;
+font-size: 100px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 100px;
+width: 1067.664px;
+        }
+        .titlebig .subb{
+           color:  #30303680;
+        }
+        .videocont{
+            grid-column: 1/4;
+            grid-row: 2/4;
+            width: 747px;
+            height: 430px;
+        }
+        .video1{
+            grid-row: 2/3;
+    grid-column: 2/3;
+    width: 213px;
+        }
+        .video2{
+            grid-row:3/4 ;
+            grid-column: 2/3;
+            width: 213px;
+        }
+        .video3{
+            grid-row:4/5 ;
+            grid-column: 2/3;
+            width: 213px;
+        }
+        .artvideo{
+            grid-row:4/5 ;
+            
+width: 747.664px;
+
+
+        }
+        .artvideo p{
+            color: #303036;
+font-size: 30px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 35px;
+        }
+     .subart{
+        grid-row:5/6 ;
+width: 747px;
+
+     }
+     .subart p{
+        color: #303036;
+font-size: 18px;
+font-family: Lato;
+font-weight: 500;
+line-height: 25px;
+     }
+.video1 span{
+    color: #D96749;
+font-size: 16px;
+font-family: Lato;
+font-weight: 700;
+} 
+     .sred{
+  display: inline-block;
+  color: #D96749;
+font-size: 16px;
+font-family: Lato;
+font-weight: 700;
+}
+
+.lt {
+    margin-top: 20px;
+  margin-left: 500px;
+}
+.lt2 {
+    margin-top: 20px;
+  margin-left: 50px;
+}
+.videoEscolhido{
+    position: relative;
+    width: 213px;
+height: 120px;
+background: #D9D9D9;
+margin-top: 27px;
+}
+.titV{
+    position: relative;
+    margin-top: 12px;
+    color: #303036;
+font-size: 25px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 30px;
+
+}
+.grow {
+    display: flex;
+    flex-direction: column;
+}
+
+.seccao2 {
+
+    flex: 1;
+
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px; /* Adjust the margin-top value as needed */
+}
+
+.leftS {
+  margin-left: 200px;
+}
+
+.leftS,
+.rightS {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 400px; /* Adjust the margin-right value to increase the separation */
+}
+
+
+.leftS span,
+.rightS span {
+  margin-bottom: 30px; /* Adjust the margin-bottom value to increase the spacing between elements */
+  white-space: nowrap;
+}
+
+#tooltipContainer {
+  position: absolute;
+  display: none;
+  padding: 10px;
+
+  color: #FFFFFF;
+  border-radius: 3px;
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  max-width: 400px; /* Adjust the max-width value as needed */
+  word-wrap: break-word;
+  white-space: normal;
+}
+    .body span {
+        font-family: 'Alegreya';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 65px;
+        line-height: 65px;
+        color: #EBB0A4;
+    }
+.gridsec4{
+    display: grid;
+    grid-template-columns: 529px;
+    grid-auto-rows: minmax(300px, auto);
+    grid-row-gap: 50px;
+    grid-column-gap: 250px;
+
+}
+.item-grid{
+    margin-top: 112px;
+    margin-left: 106px;
+    position: relative;
+
+}
+.grid-item-1{
+    grid-column: 1/3;
+width: 1058.936px;
+
+
+}
+.grid-item-1 .bip{
+    color: #303036;
+font-size: 100px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 100px;
+}
+.grid-item-1 .bop{
+    color: #30303680;
+    font-size: 100px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 100px;
+}
+.cabeca{
+    border-radius: 181px;
+background: #76B7E3;
+width: 181px;
+height: 180px;
+}
+.corpo{
+    border-radius: 300px 300px 50px 50px;
+background: #76B7E3;
+width: 335px;
+height: 258px;
+}
+.item5{
+
+position: relative;
+margin-top: 100px;
+
+}
+.grid5{
+
+    position: relative;
+    margin-top: 56px;
+    margin-left: 105px;
+    
+}
+.grid6{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-auto-rows: minmax(100px, auto);
+    margin-top: 114px;
+    margin-left: 106px;
+    position: relative;
+    grid-row-gap: 50px;
+}
+.tm{
+width: 200px;
+background: red;
+}
+.item11{
+    color: #303036;
+font-size: 100px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 100px;
+
+width: 995.888px;
+}
+.item22{
+    color: #303036;
+    width: 1061.682px;
+font-size: 35px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 44px;
+}
+.seccao5 .grid5 {
+    position: relative;
+    margin-top: 56px;
+    margin-left: 105px;
+}
+
+.pip{
+    color: #303036;
+font-size: 100px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 100px;
+}
+.pop{
+   color: #30303680;
+font-size: 100px;
+font-family: Alegreya;
+font-weight: 500;
+line-height: 100px;
+}
+.ball{
+    border-radius: 360px;
+background: #FFF;
+width: 360px;
+height: 360px;
+
+
+}
+.container2 {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+
+}
+
+.box {
+
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #303036;
+  flex: 1;
+  width: 634.575px;
+Height:
+117.92px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px -3px 18px rgba(0, 0, 0, 0.25);
+  
+background: #76B7E3;
+}
+
+.box h6 {
+    font-family: 'Alegreya';
+font-style: normal;
+font-weight: 500;
+font-size: 35px;
+line-height: 35px;
+/* or 100% */
+
+}
+.bigb{
+    background: #D9D9D9;
+    width: 1074px;
+height: 530px;
+display: flex;
+}
+.play-button {
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+ width: 101.618px;
+height: 110.216px;
+  border: none;
+  border-radius: 108.446px;
+background: rgba(78, 78, 78, 0.50);
+  position: relative;
+  cursor: pointer;
+}
+</style>
+
+<body >
+    <div class="S1">
+        <%- include("../views/partials/navBar.ejs") %>
+        <div class="divst1">
+            <h1 class="st1">Tool on peer support and active inclusion of underrepresented students</h1>
+        </div>
+    </div>
+    <div class="grow">
+        <section class="seccao2">
+            <div class="gbox" >
+                <div class="titlebig">
+                    <p>Blend & Bond </p>
+                    <p class="subb">— integration Tips</p></div>
+                <div class=" videocont" style="background: #D9D9D9;">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bzP-3es8VdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class=" artvideo">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.</p>
+                    <span class="sred">Co-Culture Space / Lab <span class="lt">25/07/2022</span></span>
+                </div>
+                    
+                    <div class="subart">
+                        <p>Description of the tutorial Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum. Praesent at diam a odio imperdiet rhoncus ac in lorem. Praesent sagittis mattis velit, gravida dapibus augue efficitur ac.
+                          <span class="sred">#event <span class="lt2">#status</span></span>
+                        </p>
+                      </div>
+                      
+                <div class=" video1"><span>From same series:</span>
+                   
+                    <div class="videoEscolhido">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bzP-3es8VdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                <h9 class="titV">Title of tutorial</h9>
+                <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </article>
+                </div>
+                <div class="itm video2">
+                    <div class="videoEscolhido">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bzP-3es8VdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    </div>
+                    <h9 class="titV">Title of tutorial</h9>
+                    <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </article>
+                </div>
+                <div class="itm video3">
+                     <div class="videoEscolhido">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bzP-3es8VdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                     </div>
+                <h9 class="titV">Title of tutorial</h9>
+                <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </article>
+                </div>
+    
+    
+                </div>
+                </section>
+    </div>
+
+    <section class="seccao3" style="position: relative;">
+        <div class="arrasta">
+            
+        </div>
+        <div class="sec3_tit" style="position: relative;margin-left:102px;border-top: 61px solid #D96749; 
+        width: 1015.826px;">
+            <h2 style="color: #FDFAFF;
+            font-size: 100px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 110px;">Culture in conversation</h2>
+            <h3 style="color: #FDFAFF80;">— learn the basics</h3>
+    </div>
+        <div class="body">
+          <div class="leftS">
+            <span onmouseover="showTooltip(this, 'hello')">Hello</span>
+            <span onmouseover="showTooltip(this, 'Goodbye')">Goodbye</span>
+            <span onmouseover="showTooltip(this, 'Please')">Please</span>
+            <span onmouseover="showTooltip(this, 'Excuse me')">Excuse me</span>
+            <span onmouseover="showTooltip(this, 'u.bɾi.gˈa.du - <br>a polite expression used when acknowledging a gift, service, or compliment, or accepting or refusing an offer.')">Obrigado</span>
+            <span onmouseover="showTooltip(this, 'Sorry')">Sorry</span>
+          </div>
+          <div class="rightS">
+            <span onmouseover="showTooltip(this, 'Good morning')">Good morning</span>
+            <span onmouseover="showTooltip(this, 'Good afternoon')">Good afternoon</span>
+            <span onmouseover="showTooltip(this, 'Good night')">Good night</span>
+            <span onmouseover="showTooltip(this, 'Yes')">Yes</span>
+            <span onmouseover="showTooltip(this, 'No')">No</span>
+          </div>
+        </div>
+      <div id="tooltipContainer" style="display: none;"></div>
+        </div>
+      
+    
+    </section>
+<section class="seccao4">
+ <div class="gridsec4">
+    <div class="item-grid grid-item-1"><p class="bip">Cultural Glossary</p><p class="bop">— expressions and idioms </p></div>
+    <div class="fsec4" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="item-grid grid-item-2"><div class="cabeca" style="margin-bottom: 18px;"></div> <div class="corpo" style="  margin-left: -80px;"></div></div>
+        
+    </div>
+    <div class="fsec4" style="display: flex; position:relative;flex-direction: column; align-items: center; justify-content: center;">
+    <div class="item-grid grid-item-3"><div class="cabeca" style="margin-bottom: 18px;"></div> <div class="corpo" style="  margin-left: -80px;"></div>
+       
+        
+    </div>
+   
+</div>
+</section>
+ <section class="seccao5" style="position: relative;">
+    <div class="grid5" style="position: relative; border-top: 61px solid #76B7E3;">
+        <div class=" grid-5-1"><p class="pip">Cultural Interactions</p><p class="pop">— testimonies</p>
+        </div>
+        </div>
+        <div class="flex5" style=" position: relative;display: flex; margin-left: 80px; ">
+            <div class="item5 grid-5-2" style="margin-left: 213px;"><div class="ball"></div></div>
+        <div class="item5 grid-5-3" style="margin-left: 213px;"><div class="ball"></div></div>
+        </div>
+        
+        <div class="container2">
+            <div class="box">
+                <h6>Box 1</h6>
+              </div>
+              <div class="box">
+                <h6>Box 2</h6>
+              </div>
+        </div>
+</section>
+<div class="seccao6" style="position: relative;">
+<div class="grid6">
+    <div class=" item11">Games for inclusion</div>
+    <div class=" item22">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.</div>
+    <div class=" item33" style="display: flex;">
+        <div class="bigb" style="justify-content: center; align-items: center;">
+            <div class="play-button" style="justify-content: center; align-items: center;display: flex;">
+              <img src="/images/Polygon 1.png" alt="" srcset="">
+            </div>
+            <a href="/game" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></a>
+          </div>
+            
+</div>
+
+</div>
+<%- include("../views/partials/footer") %>    
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+   function showTooltip(element, text) {
+  const tooltipContainer = document.getElementById("tooltipContainer");
+  tooltipContainer.innerHTML = text.replace(/\n/g, "<br>");
+  tooltipContainer.style.top = `${element.offsetTop}px`;
+  tooltipContainer.style.left = `${element.offsetLeft + element.offsetWidth}px`; // Adjusted to position the tooltip on the right side
+  tooltipContainer.style.display = "block";
+  tooltipContainer.style.color = "#FFFFFF";
+  tooltipContainer.style.transform = "translateY(-50%)";
+  tooltipContainer.style.transform = "translateX(10%)";
+
+
+  const tooltipArrow = document.createElement("div");
+  tooltipArrow.classList.add("tooltipArrow");
+  tooltipContainer.appendChild(tooltipArrow);
+
+  const tooltipArrowWidth = 10;
+  const tooltipContainerWidth = tooltipContainer.offsetWidth;
+  const tooltipArrowLeft = tooltipContainerWidth + tooltipArrowWidth;
+  tooltipArrow.style.left = `${tooltipArrowLeft}px`;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const tooltipContainer = document.getElementById("tooltipContainer");
+  document.addEventListener("mouseout", function(event) {
+    if (!event.relatedTarget || !event.relatedTarget.classList.contains("tooltip")) {
+      tooltipContainer.style.display = "none";
+    }
+  });
+});
+
+    </script>      
+        
+</body>
+</html>

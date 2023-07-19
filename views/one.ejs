@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../views/partials/head.ejs") %>
+    <title>News</title>
+    <style>
+        .S1P {
+          min-width: 100%;
+          min-height: 819px;
+         background: #FF78A9;;
+        }
+        .flexdiv22{
+    position: relative;
+    margin-left: 127px;
+margin-right: 100px;
+margin-top: 26px;
+    color: #303036;
+font-size: 16px;
+font-family: Lato;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+flex-wrap: wrap;
+  }
+
+.other{
+    position: relative; min-width: 1091.163px;
+    min-height: 1000px;
+min-height: 554.66px;
+flex-shrink: 0;
+margin-left: 127px;
+margin-right: 100px;
+margin-top: 50px;
+}
+
+        .flexArch3{
+          margin-left: 80px;
+          display: flex;
+          flex-direction: column;
+          display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      flex-grow: 0;
+      flex-shrink: 1;
+        }
+        .s3y {
+          position: relative;
+          width: 100%;
+          min-width: 1037px;
+min-height: 256px;
+          background: #FFFF;
+        }
+      
+      
+        .divsty3 h1 {
+            color: #FFF;
+font-family: Montserrat;
+font-size: 92px;
+font-style: normal;
+font-weight: 300;
+line-height: 85px;
+text-align: left;
+        }
+      
+        .divarty3 {
+          min-width: 459px;
+          min-height: 123px;
+        }
+      
+        .divarty3 h1 {
+            color: #FFF;
+font-family: Montserrat;
+font-size: 30px;
+font-style: normal;
+font-weight: 300;
+line-height: 40px;
+          margin: 0;
+          text-align: left;
+        }
+        .marg h5{
+            color: rgba(253, 85, 116, 0.80);
+font-family: Montserrat;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 44px;
+        }
+        .marg article{
+            color: #303036;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 25px;
+        }
+        .div44 {
+          position: relative;
+          width: 100%;
+          min-height: 100vh;
+          min-height: 100svh;
+          background: #FFFF;
+        }
+        .legenda{
+            position: absolute; bottom:10px;width: 279px;
+            display: flex;
+       height: 41px;color: #303036;
+font-size: 15px;
+font-family: Lato;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+        }
+        .legenda svg{
+            width: 15.839px;
+height: 9.883px;
+margin-right:20px ;
+        }
+        .marg{
+            margin-left: 535px; margin-right: 100px;margin-top: 42px;margin-bottom: 10px;
+ display: flex;flex-direction: column; column-gap: 20px;
+  min-width: 645px;
+  min-height: 100px;
+        }
+        .contimg {
+  display: flex;
+  gap: 17.5px;
+  margin-left: 185px;
+  margin-right: 100px;
+  max-width: 100%;
+}
+
+.im1,
+.im2 {
+  height: 459.614px;
+}
+
+.contimg section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 11px;
+}
+
+.contimg section:first-child {
+  width: 60%;
+  height: 100%;
+}
+
+.contimg section:last-child {
+  width: 40%;
+  height: 100%;
+}
+
+
+.sameL p{
+    color: #303036;
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.where{
+    margin-left: 98px;
+    margin-right: 93px;
+    display: flex; 
+    flex-grow: 1;
+    flex-direction: column;
+min-width: 1089.622px;
+min-height: 877.542px;
+
+border-bottom: 3px solid #303036;;
+}
+.c2 p{
+    color: #303036;
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.c2 p:last-child{
+    color: #303036;
+text-align: right;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.blP{
+    color: #FF78A9;
+                 font-family: Montserrat;
+                 font-size: 16px;
+                 font-style: normal;
+                 font-weight: 700;
+                 line-height: normal;
+                 margin-left: 20px;
+}
+.especial{
+    background: #303036;
+}
+.sam{
+        min-height: 391px;
+        border-bottom: 3px solid #303036 ;
+        border-top: 3px solid #303036 ;
+        border-left: none;
+        border-right: none;
+
+      }
+      .cc p{
+        color: #FDFAFF !important;
+      }
+      .titgg h4{
+    
+    color: #303036;
+font-family: Montserrat;
+font-size: 100px;
+font-style: normal;
+font-weight: 300;
+line-height: 100px;
+letter-spacing: 1px;
+}
+    </style>
+</head>
+<body>
+<div class="S1P">
+    <header>
+      <%- include("../views/partials/navBar.ejs") %>
+  </header>
+  <div class="flexArch3">
+      <div class="divsty3">
+        <h1 class="sty3">To increase academic achievement success rate and prevent ESL.</h1>
+      </div>
+      <div class="divarty3">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.</h1>
+      </div>
+  </div>
+     
+  </div>
+  <div class="div2">
+    <div class="titgg" style="margin-top: 140px ;
+    margin-left: 140px ; margin-bottom: 50px;">
+        <h4>THE PROJECT</h4>
+        <div class="same" style="display: flex; align-items: flex-end;">
+            <div class="lineMis" style="margin-bottom: 25px;"></div>
+            <h4>RESULTS</h4>
+        </div>
+    </div>
+    <div class="paises" style="margin-bottom: 150px;margin-top: 35px; height: 276px; display: flex; position: relative; bottom: 0; flex-direction: row; width: 100%; min-height: 100px;">
+        <div class="tif2 cc if-12" style="background: #76B7E3; display: flex; flex-direction: column;">
+            <a href="/resdois" style="display: contents; text-decoration: none; color: inherit;">
+
+                <p>Resultado 1</p>
+                <p>Preschool Teacher Training College Mihailo Palov Vršac (Pttc) Western Balkans Institute</p>
+            </a>
+        </div>
+        <div class="tif2 cc if-22" style="background: #C981F5;">
+            <a href="/restres" style="display: contents; text-decoration: none; color: inherit;">
+
+                <p>Resultado 2</p>
+                <p>Universidade da Madeira</p>
+            </a>
+        </div>
+        <div class="tif2 cc if-32" style="background: #0BE3A3;">
+            <a href="/resquatro" style="display: contents; text-decoration: none; color: inherit;">
+                <p>Resultado 3</p>
+                <p>Universitea 1 Decembrie 1918</p>
+            </a>
+        </div>
+        <div class="tif2 cc if-32" style="background: #303036;">
+            <a href="/stageg" style="display: contents; text-decoration: none; color: inherit;">
+                <p>Resultado 4</p>
+                <p>Game</p>
+            </a>
+        </div>
+        <div class="tif2 cc if-42" style="background: #FF78A9;">
+            <a href="/rescinco" style="display: contents; text-decoration: none; color: inherit;">
+                <p>Resultado 5</p>
+                <p>Universita Degli Studi Di Palermo CESIE (ONG)</p>
+            </a>
+        </div>
+        
+    </div>
+    
+    <div class="flexdiv22">
+        <div class="nomenew">Co-Culture Space / Lab</div>
+        <div class="datanew">25/07/2022 — EVENTS</div>
+    </div>
+    
+     <div class="other" style="position: relative; min-width: 1091.163px;
+     min-height: 1000px">
+        <div class="imgborder" style=" width:100%;  min-height: 904.66px;"><img  style=" width:100%;  min-height: 904.66px" src="images/background_photo.png" alt="" srcset=""></div>
+        <div class="legenda"> <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+            <path d="M0 4.94322L0.84276 5.78625L4.33409 2.19725L4.33409 15.839L5.56988 15.839L5.56988 2.19725L9.04052 5.78702L9.88328 4.94399L4.94164 9.53674e-06L0 4.94322Z" fill="#303036"/>
+          </svg><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p></div>
+     </div> 
+  <div class="marg">
+<h5>Lorem4000lorem loremLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.</h5>
+<article >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum. Praesent at diam a odio imperdiet rhoncus ac in lorem. Praesent sagittis mattis velit, gravida dapibus augue efficitur ac. Aliquam blandit urna erat, quis mollis erat placerat ut. In at fringilla dolor, ut porta nunc. Pellentesque commodo lorem at lorem elementum ultricies. Proin sollicitudin magna arcu, eu ultricies ex molestie ut. Mauris ac convallis lorem. Integer rutrum non justo quis posuere. Fusce id leo nisl.
+    Maecenas quis gravida lectus. Aenean ipsum urna, cursus vitae viverra nec, eleifend vitae magna. Mauris id magna ut dui posuere malesuada quis quis urna. Donec vestibulum nulla tincidunt, mattis augue id, imperdiet lorem. Nunc aliquam vehicula est eu porta. Aenean eget nibh et lorem posuere semper. Ut ac pulvinar erat.
+    Quisque placerat odio sit amet augue feugiat, nec consectetur libero rutrum. In hac habitasse platea dictumst. Nullam quis ultrices enim. Cras ante nisl, tempor a massa nec, elementum laoreet dui. In hac habitasse platea dictumst. Morbi at massa lectus. Praesent iaculis massa ultrices, vehicula massa nec, interdum est. Nunc at pharetra lectus, at placerat mauris. Vestibulum fermentum diam vitae metus ultricies sollicitudin. Mauris magna ipsum, pellentesque nec odio ut, vehicula porttitor augue. Mauris nec ex ultricies sapien scelerisque vestibulum.
+    Praesent at aliquet quam. Vestibulum vitae augue dignissim arcu ultricies faucibus. Sed hendrerit nulla vitae arcu laoreet, eget luctus felis pharetra. In at sodales nibh. Aliquam suscipit, mi ac tincidunt finibus, enim ligula mollis magna, et sollicitudin purus urna et mauris. Morbi suscipit ex rutrum ullamcorper tempor. Pellentesque malesuada porttitor ante eu bibendum. In varius ultrices ipsum, vel dapibus ipsum faucibus nec. Pellentesque imperdiet interdum quam, sit amet viverra lectus. Quisque orci est, venenatis fringilla mollis ac, facilisis sit amet tellus. Vivamus aliquam interdum leo, vel pellentesque lorem pulvinar quis.</article>
+
+
+</div>
+<div class="contimg">
+   <section >
+    <img class="im1" src="images/background_photo.png" alt="" srcset="">
+    <div class="sameL" style="display: flex; gap: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+            <path d="M0 4.9431L0.84276 5.78613L4.33409 2.19713L4.33409 15.8389L5.56988 15.8389L5.56988 2.19713L9.04052 5.7869L9.88328 4.94387L4.94164 -0.000112534L0 4.9431Z" fill="#303036"/>
+          </svg>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+    </div>
+    </section>
+    <section>
+    <img class="im2" src="images/background_photo.png" alt="" srcset="">
+    <div class="sameL" style="display: flex; gap: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+            <path d="M0 4.9431L0.84276 5.78613L4.33409 2.19713L4.33409 15.8389L5.56988 15.8389L5.56988 2.19713L9.04052 5.7869L9.88328 4.94387L4.94164 -0.000112534L0 4.9431Z" fill="#303036"/>
+          </svg>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+    </div>
+   
+    </section>
+
+</div>
+<div class="marg">
+    <article >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum. Praesent at diam a odio imperdiet rhoncus ac in lorem. Praesent sagittis mattis velit, gravida dapibus augue efficitur ac. Aliquam blandit urna erat, quis mollis erat placerat ut. In at fringilla dolor, ut porta nunc. Pellentesque commodo lorem at lorem elementum ultricies. Proin sollicitudin magna arcu, eu ultricies ex molestie ut. Mauris ac convallis lorem. Integer rutrum non justo quis posuere. Fusce id leo nisl.
+        Maecenas quis gravida lectus. Aenean ipsum urna, cursus vitae viverra nec, eleifend vitae magna. Mauris id magna ut dui posuere malesuada quis quis urna. Donec vestibulum nulla tincidunt, mattis augue id, imperdiet lorem. Nunc aliquam vehicula est eu porta. Aenean eget nibh et lorem posuere semper. Ut ac pulvinar erat.
+        Quisque placerat odio sit amet augue feugiat, nec consectetur libero rutrum. In hac habitasse platea dictumst. Nullam quis ultrices enim. Cras ante nisl, tempor a massa nec, elementum laoreet dui. In hac habitasse platea dictumst. Morbi at massa lectus. Praesent iaculis massa ultrices, vehicula massa nec, interdum est. Nunc at pharetra lectus, at placerat mauris. Vestibulum fermentum diam vitae metus ultricies sollicitudin. Mauris magna ipsum, pellentesque nec odio ut, vehicula porttitor augue. Mauris nec ex ultricies sapien scelerisque vestibulum.
+        Praesent at aliquet quam. Vestibulum vitae augue dignissim arcu ultricies faucibus. Sed hendrerit nulla vitae arcu laoreet, eget luctus felis pharetra. In at sodales nibh. Aliquam suscipit, mi ac tincidunt finibus, enim ligula mollis magna, et sollicitudin purus urna et mauris. Morbi suscipit ex rutrum ullamcorper tempor. Pellentesque malesuada porttitor ante eu bibendum. In varius ultrices ipsum, vel dapibus ipsum faucibus nec. Pellentesque imperdiet interdum quam, sit amet viverra lectus. Quisque orci est, venenatis fringilla mollis ac, facilisis sit amet tellus. Vivamus aliquam interdum leo, vel pellentesque lorem pulvinar quis.</article> 
+    </div>
+    <div class="where">
+        <div class="c1"><img style="
+            max-width: 100%;
+            max-height: 877.542px;" src="images/background_photo.png" alt="" srcset=""></div>
+        <div class="c2" style="display: flex; justify-content: space-between;">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+            <p>1/12</p>
+        </div>
+        <div class="c3" style="display: flex; justify-content: flex-end;">
+            <svg style="margin-right: 67px;" xmlns="http://www.w3.org/2000/svg" width="22" height="14" viewBox="0 0 22 14" fill="none">
+                <path d="M6.86616 14L8.03826 12.8058L3.0517 7.86112L22 7.86112V6.11137L3.0517 6.11137L8.03826 1.19489L6.86616 9.53674e-07L0 7.00033L6.86616 14Z" fill="#303036"/>
+              </svg>
+              <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="22" height="14" viewBox="0 0 22 14" fill="none">
+                <path d="M6.86616 14L8.03826 12.8058L3.0517 7.86112L22 7.86112V6.11137L3.0517 6.11137L8.03826 1.19489L6.86616 9.53674e-07L0 7.00033L6.86616 14Z" fill="#303036"/>
+              </svg>
+        </div>
+
+    </div>
+    <div class="marg">
+        <article >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum. Praesent at diam a odio imperdiet rhoncus ac in lorem. Praesent sagittis mattis velit, gravida dapibus augue efficitur ac. Aliquam blandit urna erat, quis mollis erat placerat ut. In at fringilla dolor, ut porta nunc. Pellentesque commodo lorem at lorem elementum ultricies. Proin sollicitudin magna arcu, eu ultricies ex molestie ut. Mauris ac convallis lorem. Integer rutrum non justo quis posuere. Fusce id leo nisl.
+            Maecenas quis gravida lectus. Aenean ipsum urna, cursus vitae viverra nec, eleifend vitae magna. Mauris id magna ut dui posuere malesuada quis quis urna. Donec vestibulum nulla tincidunt, mattis augue id, imperdiet lorem. Nunc aliquam vehicula est eu porta. Aenean eget nibh et lorem posuere semper. Ut ac pulvinar erat.
+            Quisque placerat odio sit amet augue feugiat, nec consectetur libero rutrum. In hac habitasse platea dictumst. Nullam quis ultrices enim. Cras ante nisl, tempor a massa nec, elementum laoreet dui. In hac habitasse platea dictumst. Morbi at massa lectus. Praesent iaculis massa ultrices, vehicula massa nec, interdum est. Nunc at pharetra lectus, at placerat mauris. Vestibulum fermentum diam vitae metus ultricies sollicitudin. Mauris magna ipsum, pellentesque nec odio ut, vehicula porttitor augue. Mauris nec ex ultricies sapien scelerisque vestibulum.
+            Praesent at aliquet quam. Vestibulum vitae augue dignissim arcu ultricies faucibus. Sed hendrerit nulla vitae arcu laoreet, eget luctus felis pharetra. In at sodales nibh. Aliquam suscipit, mi ac tincidunt finibus, enim ligula mollis magna, et sollicitudin purus urna et mauris. Morbi suscipit ex rutrum ullamcorper tempor. Pellentesque malesuada porttitor ante eu bibendum. In varius ultrices ipsum, vel dapibus ipsum faucibus nec. Pellentesque imperdiet interdum quam, sit amet viverra lectus. Quisque orci est, venenatis fringilla mollis ac, facilisis sit amet tellus. Vivamus aliquam interdum leo, vel pellentesque lorem pulvinar quis.</article> 
+        </div>
+        <div class="conteudorel"style="margin-top:80px;margin-left:107px;margin-right:104px; ">
+            <h5 class="related" style="color: #303036;
+            font-family: Montserrat;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;">Related Content</h5>
+            <div class="grid-sample" style="display: grid;  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                 <div class="sam sample1" style="display: flex;
+                 flex-direction: column;
+                 row-gap: 20px;
+                 justify-content: space-between;" >
+                     <div class="nave" style="margin-top: 25px; display: flex; flex-direction: row; justify-content: flex-start;">
+                         <span class="small-grid"  style="margin-right: auto;">Co-Culture Space / Lab</span>
+                         <span class="lt-grid">25/07/2022</span>
+                     </div>
+                  <article style="min-width: 309px;
+                  min-height: 241px;color: #303036;
+         font-size: 30px;
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 40px;">
+                  European HEI e-repository of  good practices related to socially inclusive learning culture and EWS
+                 </article>
+                 <div class="blP" style="margin: 0;"><span>#events</span>
+                     <span  class="spacee" style="margin-left: 20px;">status 2022</span></div>
+           
+                 </div>
+                
+                 <div class="sam sample2" style="display: flex;
+                 flex-direction: column;
+                 row-gap: 20px;
+                 justify-content: space-between;" >
+                     <div class="nave" style="margin-left: 20px;margin-top: 25px; display: flex; flex-direction: row; justify-content: flex-start;">
+                         <span class="small-grid"  style="margin-right: auto;">Co-Culture Space / Lab</span>
+                         <span class="lt-grid">25/07/2022</span>
+                     </div>
+                  <article style="min-width: 309px;
+                  min-height: 241px;color: #303036;margin-left: 20px;
+         font-size: 30px;
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 40px;">
+                  European HEI e-repository of  good practices related to socially inclusive learning culture and EWS
+                 </article>
+                 <div class="blP"><span>#events</span>
+                     <span  class="spacee" style="margin-left: 20px;">status 2022</span></div>
+           
+                 </div>
+                 <div class="sam especial sample3" style="display: flex;
+                 flex-direction: column;
+                 row-gap: 20px;
+                 justify-content: space-between;" >
+                     <div class="nave" style="margin-left: 20px;margin-top: 25px; display: flex; flex-direction: row; justify-content: flex-start;">
+                         <span class="small-grid"  style="margin-right: auto;color: #FF78A9;">Co-Culture Space / Lab</span>
+                         <span class="lt-grid;" style="color: #FF78A9;">25/07/2022</span>
+                     </div>
+                  <article style="min-width: 309px;
+                  min-height: 241px;margin-left: 20px;
+                  color: #FF78A9;
+font-family: Montserrat;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px;">
+                  European HEI e-repository of  good practices related to socially inclusive learning culture and EWS
+                 </article>
+                 <div class="blP" style="color: #F5F5F5;" ><span >#events</span>
+                     <span  class="spacee" style="margin-left: 20px;">status 2022</span></div>
+           </div>
+             </div>
+
+            
+</div>
+<%- include("../views/partials/footer.ejs") %>
+</div>
+</body>
+</html>

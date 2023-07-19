@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article</title>
+    <%- include("../views/partials/head.ejs") %>
+    <style>
+         .S21 {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            height: 100svh !important;
+           
+            background: #76B7E3;
+        }
+
+        .divst {
+            position: absolute;
+            top: 214px;
+            left: 107px;
+            right: 263px;
+            bottom: 398px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divst h1 {
+            color: #FDFAFF;
+            font-size: 92px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 85px;
+            margin: 0;
+        }
+
+        .divart {
+            position: absolute;
+            top: 493px;
+            left: 106.92px;
+            right: 118.8px;
+            height: 172px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divart h1 {
+            color: #FDFAFF;
+            font-size: 45px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 54px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .S2 {
+            background: #FFF;
+            position: absolute;
+            top: 719px;
+            width: 100%;
+        }
+
+        .alphabet {
+            position: relative;
+            display: flex;
+            width: 1070px;
+            height: 116px;
+            flex-direction: row;
+            flex-shrink: 0;
+            margin-top: 128px;
+            margin-left: 107px;
+            margin-right: 125px;
+            background-color: #FFF;
+        }
+
+        .alphabet button {
+            background-color: #FFF;
+            border: none;
+            cursor: pointer;
+            color: #303036;
+            text-align: center;
+            font-size: 40px;
+            font-family: Alegreya;
+            font-weight: 700;
+            line-height: 90px;
+            letter-spacing: 4px;
+        }
+
+        .lineart {
+            position: relative;
+            margin-top: 82px;
+            margin-left: 107px;
+            width: 856px;
+            height: 5px;
+            background: #000;
+            border: 3px solid #000;
+        }
+
+        .letterselected {
+            position: relative;
+            display: flex;
+            width: 159px;
+            height: 51px;
+            flex-direction: row;
+            flex-shrink: 0;
+            margin-left: 1027px;
+            margin-right: 106px;
+        }
+
+        .letterselected p {
+            color: #303036;
+            font-size: 128px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 45px;
+        }
+
+        .flexbox {
+            position: relative;
+            display: grid;
+            width: 1302px;
+            flex-shrink: 0;
+            flex-direction: column;
+            gap: 100px;
+            
+            margin-left: 116px;
+            margin-right: 311px;
+            margin-top: 20px;
+        }
+
+        .item-flex {
+            position: relative;
+            display: grid;
+            width: 875px;
+            grid-template-columns: 100px 100px 675px;
+            grid-auto-rows: minmax(100px, auto);
+        
+        }
+
+        .word {
+            color: #303036;
+            font-size: 64px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 45px;
+            min-width: 200px;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        .verticalline {
+            width: 0px;
+            border: 3px solid #000;
+            justify-self: flex-end;
+            grid-row: 1 / -1;
+            grid-column: 2;
+        }
+
+        .contentLine {
+            margin-left: 10px;
+            color: #303036;
+            font-size: 24px;
+            font-family: Lato;
+            font-weight: 500;
+            line-height: 25px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="S21">
+        <%- include("../views/partials/navBar.ejs") %>
+        <div class="divst">
+            <h1 class="st">Glossary</h1>
+        </div>
+        <div class="divart">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.</h1>
+        </div>
+    </div>
+
+    <div class="S2">
+        <div class="alphabet">
+            <button>A</button>
+            <button>B</button>
+            <button>C</button>
+            <button>D</button>
+            <button>E</button>
+            <button>F</button>
+            <button>G</button>
+            <button>H</button>
+            <button>I</button>
+            <button>J</button>
+            <button>K</button>
+            <button>L</button>
+            <button>M</button>
+            <button>N</button>
+            <button>O</button>
+            <button>P</button>
+            <button>Q</button>
+            <button>R</button>
+            <button>S</button>
+            <button>T</button>
+            <button>U</button>
+            <button>V</button>
+            <button>W</button>
+            <button>X</button>
+            <button>Y</button>
+            <button>Z</button>
+        </div>
+        <div class="lineart"></div>
+        <div class="letterselected">
+            <p>A</p>
+        </div>
+       
+            
+        <div class="flexbox">
+            <% glos.forEach(element => {%>
+            <div class="item-flex">
+                <div class="word" style="display: none;"><%= element.word %></div>
+                <div class="verticalline" style="display: none;"></div>
+                <div class="contentLine" style="display: none;"><%= element.content %></div>
+            </div>
+            <% }); %>
+            
+        </div>
+        <script>
+            let alphabetButtons = document.querySelectorAll('.alphabet button');
+            let letterSelected = document.querySelector('.letterselected p');
+            let wordElements = document.querySelectorAll('.word');
+            let contentElements = document.querySelectorAll('.contentLine');
+            let verticallines = document.querySelectorAll('.verticalline');
+
+
+            alphabetButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    letterSelected.textContent = button.textContent;
+
+                    let selectedLetter = button.textContent;
+                    wordElements.forEach((element, index) => {
+                        if (element.textContent.charAt(0).toUpperCase() === selectedLetter) {
+                            element.style.display = 'block';
+                            verticallines[index].style.display='block';
+                            contentElements[index].style.display = 'block';
+                        } else {
+                            element.style.display = 'none';
+                            verticallines[index].style.display='none';
+
+                            contentElements[index].style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
+        <%- include("../views/partials/footer.ejs") %>
+    </div>
+</body>
+</html>

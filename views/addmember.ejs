@@ -1,0 +1,186 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Create Art </title>
+    <style>
+                .S1 {
+            position: relative;
+            width: 100%;
+            height: 719px;
+            background: #76B7E3;
+        }
+
+        .divst {
+            position: absolute;
+            top: 214px;
+            left: 107px;
+            right: 263px;
+            bottom: 398px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divst h1 {
+            color: #FDFAFF;
+            font-size: 92px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 85px;
+            margin: 0;
+        }
+
+        .divart {
+            position: absolute;
+            top: 493px;
+            left: 106.92px;
+            right: 118.8px;
+            height: 172px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .divart h1 {
+            color: #FDFAFF;
+            font-size: 45px;
+            font-family: Alegreya;
+            font-weight: 500;
+            line-height: 54px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .S2 {
+            background: #FFF;
+            position: relative;
+            top: 719px;
+            width: 100%;
+        }
+    /* Define your CSS styles here */
+   body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      margin-top: -600px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+   
+    }
+    
+    .container .h1 {
+      color: #333;
+      font-size: 32px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .container .h2 {
+      color: #666;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .container p {
+      color: #444;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    
+    .btn {
+
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      margin: 20px auto;
+    }
+
+  </style>
+   <%- include("../views/partials/head.ejs") %>
+</head>
+<body>
+    <div class="S1">
+        <%- include("../views/partials/navBar.ejs") %>
+        <div class="divst">
+            <h1 class="st">Create Member</h1>
+        </div>
+        <div class="divart">
+            <h1>Insert Member </h1>
+        </div>
+    </div>
+
+    <section class="S2">
+        <form method="POST" action="/member/new" class="container" style="margin-top: -600px;" enctype="multipart/form-data">
+            <h1 class="h1">Member Form</h1>
+          
+            <div class="form-group">
+              <label for="memberNameInput">Member Name</label>
+              <input required type="text" class="form-control" id="memberNameInput" name="member_name" placeholder="Enter the member name">
+              <small class="form-text text-muted">Insert the member name</small>
+            </div>
+            <div class="form-group">
+              <label for="emailInput">Email</label>
+              <input required type="email" class="form-control" id="emailInput" name="email" placeholder="Enter the email">
+              <small class="form-text text-muted">Insert the email</small>
+            </div>
+            <div class="form-group">
+              <label for="functionInput">Member Function</label>
+              <input required type="text" class="form-control" id="functionInput" name="member_function" placeholder="Enter the member function">
+              <small class="form-text text-muted">Insert the member function</small>
+            </div>
+            <div class="form-group">
+              <label for="bioInput">Bio</label>
+              <textarea required class="form-control" id="bioInput" name="bio" cols="20" rows="5" placeholder="Enter the bio"></textarea>
+              <small class="form-text text-muted">Write the bio</small>
+            </div>
+            <div class="form-group">
+              <label for="imageInput">Image</label>
+              <input required type="file" class="form-control" id="imageInput" name="image" accept="image/*">
+              <small class="form-text text-muted">Upload an image file</small>
+            </div>
+          
+            <button type="submit" class="btn btn-primary" style="display: flex; justify-content: center;">
+              <p class="lettersig">Insert</p>
+            </button>
+          </form>
+        
+    </section>
+<!-- Your HTML code -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var dateInput = document.querySelector('#dateInput');
+
+    var currentDate = new Date();
+    var formattedDate = currentDate.toISOString().split('T')[0];
+    dateInput.value = formattedDate;
+
+    function changeDate() {
+      var newDate = dateInput.value;
+      dateInput.setAttribute('placeholder', newDate);
+      dateInput.setAttribute('value', newDate);
+    }
+    dateInput.addEventListener('change', changeDate);
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create News & Events</title>
+    <%- include("../views/partials/head.ejs") %>
+    <style>
+        .secInsert {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #76B7E3;
+        }
+        .Ins {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container22 {
+            min-width: 900px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-text {
+            display: block;
+            margin-bottom: 5px;
+            color: #777;
+        }
+        .custom-control-label {
+            font-weight: normal;
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="secInsert" style="display: flex; justify-content: center; align-items: center; color: #303036;
+    font-family: Montserrat;
+    font-size: 92px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 85px; /* 92.391% */">
+
+            <h1>Insert News and Events</h1>  
+
+    </div>
+    <div class="Ins">
+        <form method="POST" action="/submit-form" class="container22">
+            <h1 class="h1">News &amp; Events Form</h1>
+            <div class="form-group">
+                <small class="form-text text-muted">Choose what you want to create</small>
+                <div class="custom-control custom-checkbox">
+                    <input  type="checkbox" class="custom-control-input" id="chose-news" name="ne" value="news">
+                    <label class="custom-control-label" for="chose-news">News</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input  type="checkbox" class="custom-control-input" id="chose-events" name="ne" value="events">
+                    <label class="custom-control-label" for="chose-events">Events</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Insert</button>
+        </form>
+    </div>
+    <%- include("../views/partials/footer.ejs") %>
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                checkboxes.forEach(cb => {
+                    if (cb !== checkbox) {
+                        cb.checked = false;
+                    }
+                });
+            });
+        });
+    </script>    
+</body>
+</html>

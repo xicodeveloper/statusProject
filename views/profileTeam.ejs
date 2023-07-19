@@ -1,0 +1,115 @@
+<!-- profileTeam.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= teamMember.member_name %></title>
+  <%- include('../views/partials/head'); %>
+</head>
+<style>
+/* profile.css */
+.paint2 {
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile {
+  text-align: center;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-top: 100px;
+}
+
+.profile:hover {
+  transform: scale(1.05);
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+.member-name {
+  font-size: 28px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.member-function {
+  font-size: 20px;
+  margin-top: 5px;
+  color: #888;
+}
+
+.member-email {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #555;
+}
+
+.member-bio {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.profile::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+</style>
+<body>
+  <%- include("../views/partials/navBar.ejs") %>
+  <div class="paint2">
+    <div class="profile">
+      <img src="<%= teamMember.image %>" alt="Profile Image" class="profile-image">
+      <h1 class="member-name"><%= teamMember.member_name %></h1>
+      <h2 class="member-function"><%= teamMember.member_function %></h2>
+      <p class="member-email"><%= teamMember.email %></p>
+      <p class="member-bio"><%= teamMember.bio %></p>
+    </div>
+  </div>
+</body>
+</html>

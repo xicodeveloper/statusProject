@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    select {
+      padding: 8px 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .calendar-container {
+      margin-bottom: 20px;
+    }
+
+    .month-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .week-days {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .day {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+    }
+
+    .weekend {
+      background-color: #ff6969;
+      color: #fff;
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+
+    .day {
+      text-align: center;
+      padding: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .event-container {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .event-container.active {
+      display: block;
+    }
+
+    .event {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .event .time {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .start-date {
+  background-color: #b3e6b3;
+}
+
+.end-date {
+  background-color: #ff9999;
+}
+
+.selected-range {
+  background-color: #cce5ff;
+}
+
+    .event .description {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .event .location {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="years">
+      <div class="years">
+        <select id="yearSelect" onchange="showDays()">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+        </select>
+        
+        <select id="monthSelect" onchange="showDays()">
+          <option value="0">January</option>
+          <option value="1">February</option>
+          <option value="2">March</option>
+          <option value="3">April</option>
+          <option value="4">May</option>
+          <option value="5">June</option>
+          <option value="6">July</option>
+          <option value="7">August</option>
+          <option value="8">September</option>
+          <option value="9">October</option>
+          <option value="10">November</option>
+          <option value="11">December</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="calendar"></div>
+
+    <div id="event-container" class="event-container">
+      <div class="event">
+        <div class="time"></div>
+        <div class="description"></div>
+        <div class="location"></div>
+      </div>
+    </div>
+
+    <script>
+      var startDate = null;
+var endDate = null;
+
+      function showDays() {
+        var yearSelect = document.getElementById('yearSelect');
+        var monthSelect = document.getElementById('monthSelect');
+        var year = parseInt(yearSelect.value);
+        var month = parseInt(monthSelect.value);
+
+        var daysContainer = document.querySelector('.calendar');
+        daysContainer.innerHTML = '';
+
+        var months = [
+          { name: 'January', days: 31 },
+          { name: 'February', days: isLeapYear(year) ? 29 : 28 },
+          { name: 'March', days: 31 },
+          { name: 'April', days: 30 },
+          { name: 'May', days: 31 },
+          { name: 'June', days: 30 },
+          { name: 'July', days: 31 },
+          { name: 'August', days: 31 },
+          { name: 'September', days: 30 },
+          { name: 'October', days: 31 },
+          { name: 'November', days: 30 },
+          { name: 'December', days: 31 }
+        ];
+
+        var monthContainer = document.createElement('div');
+        monthContainer.classList.add('calendar-month');
+
+        var monthTitle = document.createElement('div');
+        monthTitle.classList.add('month-title');
+        monthTitle.textContent = months[month].name + ' ' + year; // Display the year in the title
+        monthContainer.appendChild(monthTitle);
+
+        var weekDays = document.createElement('div');
+        weekDays.classList.add('week-days');
+        weekDays.innerHTML = `
+          <div class="day">Sun</div>
+          <div class="day">Mon</div>
+          <div class="day">Tue</div>
+          <div class="day">Wed</div>
+          <div class="day">Thu</div>
+          <div class="day">Fri</div>
+          <div class="day">Sat</div>
+        `;
+        monthContainer.appendChild(weekDays);
+
+        var daysGrid = document.createElement('div');
+        daysGrid.classList.add('calendar-days');
+
+        var firstDay = new Date(year, month, 1).getDay();
+
+        for (var i = 0; i < firstDay; i++) {
+          var emptyDay = document.createElement('div');
+          emptyDay.classList.add('day');
+          daysGrid.appendChild(emptyDay);
+        }
+
+        for (var j = 1; j <= months[month].days; j++) {
+          var day = document.createElement('div');
+          day.classList.add('day');
+          day.textContent = j;
+          day.addEventListener('click', showEvent);
+
+          var dayOfWeek = new Date(year, month, j).getDay();
+          if (dayOfWeek === 0 || dayOfWeek === 6) {
+            day.classList.add('weekend'); // Highlight weekends in red
+          }
+
+          daysGrid.appendChild(day);
+        }
+
+        monthContainer.appendChild(daysGrid);
+        daysContainer.appendChild(monthContainer);
+      }
+
+      function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+      }
+      function showEvent(event) {
+  var eventContainer = document.getElementById('event-container');
+  eventContainer.classList.add('active');
+
+  var day = event.target.textContent;
+  var monthSelect = document.getElementById('monthSelect');
+  var yearSelect = document.getElementById('yearSelect');
+
+  var month = parseInt(monthSelect.value);
+  var year = parseInt(yearSelect.value);
+
+  var eventDate = new Date(year, month, day);
+  var options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+  var dateString = eventDate.toLocaleDateString(undefined, options);
+
+  var eventTime = document.querySelector('.event .time');
+  
+  if (startDate === null) {
+    startDate = eventDate;
+    event.target.classList.add('start-date');
+    eventTime.textContent =  dateString;
+
+  } else if (endDate === null) {
+    endDate = eventDate;
+    event.target.classList.add('end-date');
+
+    if (endDate >= startDate) {
+      var days = document.querySelectorAll('.day');
+      days.forEach(function (element) {
+        var dayNumber = parseInt(element.textContent);
+        var currentDate = new Date(year, month, dayNumber);
+
+        if (currentDate >= startDate && currentDate <= endDate) {
+          element.classList.add('selected-range');
+        }
+      });
+
+      eventTime.textContent = startDate.toLocaleDateString(undefined, options) +
+        ' - ' + endDate.toLocaleDateString(undefined, options);
+        var eventDescription = document.querySelector('.event .description');
+        eventDescription.textContent = 'Sample Event Description';
+
+        var eventLocation = document.querySelector('.event .location');
+        eventLocation.textContent = 'Sample Event Location';
+    } else {
+      clearSelection();
+      eventTime.textContent = 'Invalid date range';
+      var eventLocation = document.querySelector('.event .location');
+        eventLocation.textContent = '';
+    }
+  } else {
+    clearSelection();
+    startDate = eventDate;
+    event.target.classList.add('start-date');
+    eventTime.textContent =  dateString;
+  }
+}
+
+
+function clearSelection() {
+  var selectedDays = document.querySelectorAll('.start-date, .end-date, .selected-range');
+  selectedDays.forEach(function (element) {
+    element.classList.remove('start-date', 'end-date', 'selected-range');
+  });
+
+  startDate = null;
+  endDate = null;
+}
+
+      // Show current month by default
+      var currentDate = new Date();
+      var currentYear = currentDate.getFullYear();
+      var currentMonth = currentDate.getMonth();
+
+      var yearSelect = document.getElementById('yearSelect');
+      var monthSelect = document.getElementById('monthSelect');
+      yearSelect.value = currentYear;
+      monthSelect.value = currentMonth;
+
+      showDays();
+    </script>
+  </div>
+</body>
+</html>

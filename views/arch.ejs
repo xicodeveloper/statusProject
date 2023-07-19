@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Testemunho</title>
+    <style>
+        .S1yellow {
+          min-width: 100%;
+          min-height: 100svh;
+          background: #0BE3A3;
+        }
+        .flexArch{
+          margin-left: 80px;
+          display: flex;
+          flex-direction: column;
+          display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex-grow: 0;
+      flex-shrink: 1;
+        }
+      .small-p{
+       
+        display: inline-block;
+        color: #303036;
+font-size: 16px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+      }
+      .small-g{
+        color: #0BE3A3;
+font-size: 16px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+      }
+      .lt-g{
+        margin-left: 50px;
+      }
+      .lt-p{
+        margin-left: 90px;
+      }
+        .s2y {
+          position: relative;
+          width: 100%;
+          min-height: 100vh;
+          min-height: 100svh;
+          background: #FFFF;
+        }
+      
+      
+        .divsty h1 {
+          color: #303036;
+          font-size: 92px;
+          font-family: Montserrat;
+          font-weight: 300;
+          line-height: 85px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .divarty {
+          min-width: 459px;
+          min-height: 123px;
+        }
+      
+        .divarty h1 {
+          color: #303036;
+          font-size: 45px;
+          font-family: Montserrat;
+          font-weight: 300;
+          line-height: 54px;
+          margin: 0;
+          text-align: left;
+        }
+        .grid-cont {
+  display: grid;
+  
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 107px;
+  margin-top: 50px;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+margin-right: 100px;
+  grid-auto-flow: dense; 
+  
+}
+.conta:hover {
+  transform: scale(1.05); /* Increase the size using scale transformation */
+}
+@media (max-width: 900px) {
+  .grid-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+  .flexArch{
+    margin: 0;
+    padding: 0;
+  }
+  #desaparece{
+    display: none;
+  }
+  .grid-p {
+    min-width: auto;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+  .flexArch{
+    margin: 0;
+    padding: 0;
+  }
+  #desaparece{
+    display: none;
+  }
+  .grid-p {
+    min-width: auto;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+
+        .conta {
+          min-width: 359px;
+         
+          transition: transform 0.3s;
+  transform-origin: top left;
+        }
+      .cont-7{
+        grid-column: 2/-1;
+        grid-row: 3/5;
+
+      }
+        .cont-1, .cont-3, .cont-4, .cont-5, .cont-6, .cont-7, .cont-8{
+          border-top: 3px solid #333;
+          border-right: none;
+          border-bottom: none;
+          border-left: none;
+        }
+      
+        .cont-2 {
+        background: #0BE3A3;
+        border: none !important;
+        }
+        .cont-4 , .cont-8{
+        background: #0BE3A3;
+        border: none !important;
+        max-width: max-content;
+        }
+      
+        .cont-4 {
+          grid-column: 1/3;
+          grid-row: 2/3;
+        }
+      
+        .cont-4 {
+          min-width: 270px;
+        }
+      
+        .cont-1 article, .cont-3 article, .cont-5 article {
+          color: #303036;
+          font-size: 30px;
+          font-family: Montserrat;
+          line-height: 40px;
+        }
+      
+        .cont-2 article {
+          color: #FDFAFF;
+          font-size: 30px;
+          font-family: Montserrat;
+          line-height: 40px;
+        }
+      
+        .cont-1 .identidade, .cont-3 .identidade, .cont-5 .identidade {
+          position: relative;
+          color: #303036;
+          font-size: 16px;
+          font-family: Montserrat;
+          font-weight: 700;
+        }
+      
+        .cont-2 .identidade {
+          position: relative;
+          color: #FDFAFF;
+          font-size: 16px;
+          font-family: Montserrat;
+          font-weight: 700;
+        }
+      
+        .cont-2 .dataa {
+          color: #FDFAFF;
+        }
+      
+        .cont-2 .hastags {
+          color: #FDFAFF;
+        }
+      
+        .identidade,
+        .dataa {
+          display: inline-block;
+          /* Additional styling properties if needed */
+        }
+      
+        .dataa {
+          margin-left: 50px;
+        }
+      
+        .cont-4 h8 {
+          color: #303036;
+          font-size: 30px;
+          font-family: Montserrat;
+          line-height: 40px;
+        }
+      
+        .image-container {
+          position: relative;
+          margin-top: 30px;
+          overflow: hidden;
+        }
+      
+        .image-container img {
+          min-width: 100%;
+          display: block;
+          min-height: 471px;
+        }
+.contas{
+  min-width: 334px;
+  color: #303036;
+font-size: 30px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 400;
+line-height: 40px;
+}
+.grid-p{
+  position: relative;
+  margin-top: 61px;
+display: flex;
+flex-direction: column;
+width: 1320px;
+margin-left: 101px;
+
+
+}
+.iten{
+min-height: 100px;
+
+  flex-grow: 1;
+  justify-content: center;
+border-left: none;
+border-right: none;
+border-bottom: none;
+border-top: 3px solid #333;
+}
+.iten div:first-of-type{
+  color: #303036;
+font-size: 22px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+}
+.iten p:last-of-type{
+  color: #303036;
+font-size: 18px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+@media (max-width: 900px) {
+  .grid-p {
+    width: auto;
+    margin-left: 50px;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-p {
+    width: auto;
+    text-align: left;
+    margin-left: 50px;
+    min-height: 500px;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .iten {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .iten {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+  .tifw:hover {
+    transform: scale(1.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .tifw:last-child:hover {
+    max-width: 23.79%;
+    transform: scale(1.0);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  
+@media (max-width: 900px) {
+  .iten div:first-of-type,
+  .iten p:last-of-type {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .iten div:first-of-type,
+  .iten p:last-of-type {
+    margin: 10px;
+  }
+}
+.i-nav{
+  min-height: 75px;
+}
+#first{
+  grid-column: 1/3;
+  grid-row: 1/2;
+
+
+}
+#second{
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+.navigation a{
+  color: #303036;
+font-size: 20px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+
+
+.hal p{
+  color: #FDFAFF;
+font-family: Montserrat;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 133.333% */
+
+}
+.hal .small-p{
+  color: #FDFAFF;
+
+}
+.navigation a:hover{
+  color: #303036;
+font-size: 20px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.areaarch a:focus {
+  outline: none;
+  text-decoration: none !important;
+      color: inherit;
+}
+.image-grid {
+  background-image: url("images/background_photo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navigation{
+  position: absolute;
+display: flex;
+  flex-wrap: wrap;
+
+  justify-content:flex-start;
+  align-items: flex-start;
+  bottom: 0;
+  flex: 1;
+  width: 100%;
+}
+.tifw{
+  display: flex;justify-content: center;align-items: center;
+    width: 25%;
+  color: #303036;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+a, li {
+      text-decoration: none !important;
+    }
+    a:hover, li:hover{
+      text-decoration: none !important;
+    }
+    a:visited , li:hover{
+      text-decoration: none !important;
+    }
+      </style> 
+    <%- include("../views/partials/head.ejs") %>
+    
+</head>
+<body>
+    <div class="S1yellow">
+      <header>
+        <%- include("../views/partials/navBar.ejs") %>
+    </header>
+    <div class="flexArch">
+        <div class="divsty">
+          <h1 class="sty">NEWS & EVENTS</h1>
+        </div>
+        <div class="divarty">
+          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.Lorem500 Lorem500</h1>
+        </div>
+    </div>
+    <div class="fS1" style="display: flex; position: absolute; bottom: 0; flex-direction: row; width: 100%; min-height: 100px;">
+      <div class="tifw if-1" style="background: #76B7E3;"><a href="/#divH" style="text-decoration: none;outline: none;color: inherit;"> Co-Culture Space / Lab</a></div>  
+     <div class="tifw if-2" style="background: #C981F5; "> <a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Glocal Coffee Breaks</a></div>
+      <div class="tifw if-3" style="background: #FF78A9;"><a href="/#team-section" style="text-decoration: none;outline: none;color: inherit;">Intercultural Workshops</a></div>
+      <div class="tifw if-4" style="background: #303036;;color: #FDFAFF;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;"><a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Reports</a></div>
+      <div class="tifw i-nav" class="areaarch" >
+        <form action="/search" method="post">
+          <svg xmlns="http://www.w3.org/2000/svg" width="170" height="34" viewBox="0 0 136 34" fill="none" style="position: relative;">
+            <path d="M119.031 1H16.8549C8.09849 1 1 8.13546 1 16.9375C1 25.7395 8.09849 32.875 16.8549 32.875H119.031C127.788 32.875 134.886 25.7395 134.886 16.9375C134.886 8.13546 127.788 1 119.031 1Z" stroke="#303036" stroke-width="2"/>
+            <foreignObject x="10" y="5" width="90" height="24">
+              <input type="text" id="searchInput" style="border: none; background: transparent; min-width: 100px; outline:none" name="query" placeholder="Search"/>
+            </foreignObject>
+            <foreignObject x="120" y="8" width="20" height="20">
+              <button style="background: none; border: none; position: absolute; top: 0; right: 9px;" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" style="left: -1px; position: absolute;">
+                  <path d="M7.87703 14.3088C11.3364 14.3088 14.1408 11.4898 14.1408 8.01244C14.1408 4.53505 11.3364 1.71606 7.87703 1.71606C4.41766 1.71606 1.61328 4.53505 1.61328 8.01244C1.61328 11.4898 4.41766 14.3088 7.87703 14.3088Z" stroke="#303036" stroke-width="2.222" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15.7064 15.8828L12.3008 12.4595" stroke="#303036" stroke-width="2.222" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </foreignObject>
+          </svg>
+        </form>       
+      </div>
+    </div>
+
+    </div>
+    <div class="s2y">
+      
+        <div class="grid-cont">
+            <div class="conta cont-1">
+                <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur voluptates sint quibusdam tenetur mollitia eligendi animi ipsa repellendus dignissimos!</article>
+                <div class="identidade">Lorem labs</div>
+                <div class="dataa">13-12-2021</div>
+                <div class="hastags">#lol</div>
+            </div>
+            <div class="conta cont-2">
+                <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur voluptates sint quibusdam tenetur mollitia eligendi animi ipsa repellendus dignissimos!</article>
+                <div class="identidade">Lorem labs</div>
+                <div class="dataa">13-12-2021</div>
+                <div class="hastags">#lol</div>
+            </div>
+            <div class="conta cont-3">
+                <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur voluptates sint quibusdam tenetur mollitia eligendi animi ipsa repellendus dignissimos!</article>
+                <div class="identidade">Lorem labs</div>
+                <div class="dataa">13-12-2021</div>
+                <div class="hastags">#lol</div>
+            </div>
+            <div class="conta cont-4">
+                <h8>HEI teaching and non-teaching staff training program on intercultural competences</h8>
+                <div class="info" style="color: #212121;
+                font-size: 16px;
+                font-family: Montserrat;
+                font-weight: 300;justify-content: space-between; display: flex; margin-top: 46px;">
+                    <div class="identidade">Lorem labs</div>
+                    <div class="dataa">13-12-2021</div>
+
+                </div>
+                <div class="hastags" style="color: #FDFAFF;">#lol</div>
+                <div class="image-container">
+                    <img id="desaparece" src="images/background_photo.png" style=" width: 752.569px;
+                    height: 16.375px;" alt="">
+                </div>
+            </div>
+            <div class="conta cont-5">
+                <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur voluptates sint quibusdam tenetur mollitia eligendi animi ipsa repellendus dignissimos!</article>
+                <div class="flexboxx" style="display: flex; flex-direction: rows; justify-content: flex-end;">
+                    <div class="identidade">Lorem labs</div>
+                    <div class="dataa">13-12-2021</div>
+                    <div class="hastags">#lol</div>
+                </div>
+                
+
+            </div>
+            <div class="contas conta cont-6">
+              <p>European HEI e-repository of good practices related to  socially inclusive learning culture and EWS</p>
+              <div class="di" style="display: flex; flex-direction: column; gap: 2px;">
+                <span class="small-p" style="margin: 0;padding: 0;">Co-Culture Space / Lab <span class="lt-p">25/07/2022</span></span>
+              <span class="small-g"  style="margin: 0;padding: 0; list-style: none;">#status <span class="lt-g">#events</span></span>
+                
+              </div>
+                
+  
+            </div>
+              
+              <div class="contas conta cont-7 image-grid " style="display: grid; grid-template-columns: 1fr 1fr; row-gap: 50px; column-gap: 50px;">
+                <div class="hal hal1 conta">
+                  <p>European HEI e-repository of good practices related to  socially inclusive learning culture and EWS</p>
+              
+                  <div class="di" style="display: flex; flex-direction: column; gap: 2px;">
+                    <span class="small-p" style="margin: 0;padding: 0;">Co-Culture Space / Lab <span class="lt-p">25/07/2022</span></span>
+                    <span class="small-g"  style="margin: 0;padding: 0; list-style: none;">#status <span class="lt-g">#events</span></span>
+                  </div>
+                  
+                </div>
+                <div class="hal hal2 conta"><p>European HEI e-repository of good practices related to  socially inclusive learning culture and EWS</p>
+              
+                  <div class="di" style="display: flex; flex-direction: column; gap: 2px;">
+                    <span class="small-p" style="margin: 0;padding: 0;">Co-Culture Space / Lab <span class="lt-p">25/07/2022</span></span>
+                    <span class="small-g"  style="margin: 0;padding: 0; list-style: none;">#status <span class="lt-g">#events</span></span>
+                  </div>
+                  </div>
+                <div class="hal hal3 conta" style="border-top: 3px solid #FDFAFF;"><p>European HEI e-repository of good practices related to  socially inclusive learning culture and EWS</p>
+              
+                  <div class="di" style="display: flex; flex-direction: column; gap: 2px;">
+                    <span class="small-p" style="margin: 0;padding: 0;">Co-Culture Space / Lab <span class="lt-p">25/07/2022</span></span>
+                    <span class="small-g"  style="margin: 0;padding: 0; list-style: none;">#status <span class="lt-g">#events</span></span>
+                  </div>
+                  </div>
+                <div class="hal hal4 conta"><p>European HEI e-repository of good practices related to  socially inclusive learning culture and EWS</p>
+              
+                  <div class="di" style="display: flex; flex-direction: column; gap: 2px;">
+                    <span class="small-p" style="margin: 0;padding: 0;">Co-Culture Space / Lab <span class="lt-p">25/07/2022</span></span>
+                    <span class="small-g"  style="margin: 0;padding: 0; list-style: none;">#status <span class="lt-g">#events</span></span>
+                  </div>
+                  </div>
+                
+                  
+              </div>
+            <div class="contas conta cont-8 "><p>European HEI e-repository of good practices related to  socially inclusive learning culture and EWS</p>
+            <div class="di" style="display: flex; flex-direction: column; gap: 2px;">
+              <span class="small-p" style="margin: 0;padding: 0;">Co-Culture Space / Lab  <span class="lt-p">25/07/2022</span></span>
+              <span class="small-g"  style="margin: 0;padding: 0; list-style: none;">#status <span class="lt-g">#events</span></span>
+            </div>
+              
+
+            </div>
+     
+                  
+              
+                  
+        </div>
+        <div class="grid-p">
+          <div class="iten iten-1" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
+            <div style="max-width: 642px;">
+              CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
+            </div>
+            <div>Quarterly Report<br>25/07/2022</div>
+            <div style="align-self: flex-start;" >
+              <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
+            </div>
+          </div>
+            <div class="iten iten-2" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
+              <div style="max-width: 642px;">
+                CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
+              </div>
+              <div>Quarterly Report<br>25/07/2022</div>
+              <div style="align-self: flex-start;" >
+                <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
+              </div>
+            </div>
+            <div class="iten iten-3" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
+              <div style="max-width: 642px;">
+                lorem5000CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
+              </div>
+              <div>Quarterly Report<br>25/07/2022</div>
+              <div style="align-self: flex-start;" >
+                <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
+              </div>
+            </div>
+            
+            <div class="iten iten-4" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
+              <div style="max-width: 642px;" >
+                CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
+              </div>
+              <div>Quarterly Report<br>25/07/2022</div>
+              <div style="align-self: flex-start;" >
+                <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
+              </div>
+            </div>
+            
+           
+          
+        </div>
+        <%- include("../views/partials/footer.ejs") %>
+    </div>
+    <script>
+let buttons = document.getElementsByClassName("clica");
+
+for (let index = 0; index < buttons.length; index++) {
+  const button = buttons[index];
+
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    let paraSubstituir = button.parentElement.parentElement;
+
+    console.log("Button clicked:", button);
+    console.log("Element to replace:", paraSubstituir);
+
+    if (paraSubstituir.classList.contains("open")) {
+      console.log("Closing item...");
+      closeItem(paraSubstituir);
+    } else {
+      console.log("Opening item...");
+      openItem(paraSubstituir, index);
+    }
+  });
+}
+
+function openItem(item, index) {
+  item.classList.add("open");
+  item.dataset.previousContent = item.innerHTML;
+
+  var htmlString = `
+  <div class="iten iten-${index + 1}" style="position: relative;display: grid; grid-auto-columns: minmax(102px, auto);grid-auto-rows: minmax(100px, auto);grid-template-columns: 1fr 1fr 1fr; margin: 0; padding: 0;">
+    <div id="first" style="color: #303036; text-align: left;font-size: 35px; font-family: Montserrat; font-style: normal; font-weight: 400; line-height: 40px;min-width: 385px; min-height: 99px;">
+      <h8>CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students</h8>
+    </div>
+    <div id="second" class="textt" style="color: #303036; text-align: left;font-size: 18px; font-family: Montserrat; font-style: normal; font-weight: 400; line-height: 25px; min-width: 385px; min-height: 99px;">
+      <p>Lorem ipsum dolorLORE LOREM sit amet, consectetur adipisicing elit. Ipsam aut quo reiciendis debitis? Nesciunt similique id tenetur at porro odit molestias fugiat officia, dolorem voluptate. Sunt facere unde dolor amet!</p>
+    </div>
+    <div>
+      <div>
+        <p style="margin-left: 20px;">Quarterly Report <br>25/07/2022<br><span class="small-g">#status<span class="lt-g">#events</span></p>
+      </div>
+    </div>
+
+    <button class="clicaF" style="background-color: transparent;border:none; margin: 0;position: absolute;right: 0; top: 0;">
+      <img src="images/Caminho 91.png" alt="" srcset="">
+    </button>
+
+    <div style="display: flex; gap: 20px;flex-direction: row;align-items: center;margin: 0; padding: 0; list-style: none; grid-column: 3/-1; grid-row: 2/4;">
+      <img src="images/Grupo 70 (1).png" alt="" srcset="">
+      <div class="flexxxx" style="display: flex; flex-direction: column;">
+        <p><a href="/arquivos/20220318_Management baseline evaluation report.pdf">Open</a></p>
+        <p><a href="/arquivos/20220318_Management baseline evaluation report.pdf" download>Download</a></p>
+        <p><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf" target="_blank">Share on Facebook</a></p>
+        <p><a href="mailto:?subject=Check%20out%20this%20file&body=I%20found%20this%20file%20and%20thought%20you%20might%20find%20it%20interesting:%20http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf">Share via Email</a></p>
+        <p><a href="instagram://library?AssetPath=http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf" target="_blank">Share on Instagram</a></p>
+        <p><a href="whatsapp://send?text=Check%20out%20this%20file:%20http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf" target="_blank">Share on WhatsApp</a></p>
+
+      </div>
+    </div>
+  </div>
+  `;
+
+  item.innerHTML = htmlString;
+
+  let closeButton = item.getElementsByClassName("clicaF")[0];
+  closeButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log("Closing item...");
+    closeItem(item);
+  });
+}
+
+function closeItem(item) {
+  item.classList.remove("open");
+  item.innerHTML = item.dataset.previousContent;
+
+  let openButton = item.getElementsByClassName("clica")[0];
+  openButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log("Opening item...");
+    openItem(item);
+  });
+}
+
+</script>
+
+    
+</body>
+</html>
