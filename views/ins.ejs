@@ -17,9 +17,27 @@
       padding: 100px 20px;
       text-align: center;
     }
+
+    .btn-box-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn-box {
+      flex: 1 0 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     
     .btn {
-      display: inline-block;
       padding: 15px 30px;
       color: #fff;
       text-decoration: none;
@@ -27,65 +45,70 @@
       font-weight: bold;
       border: none;
       border-radius: 50px;
-      margin-bottom: 20px;
       transition: background-color 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       cursor: pointer;
+      width: 70%;
+      margin-bottom: 10px;
     }
     
     .btn-primary {
       background-color: #4c6ef5;
     }
-    
+
     .btn-secondary {
       background-color: #ff6f00;
     }
-    
-    h1 {
-      font-size: 36px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 40px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    p {
-      font-size: 18px;
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 30px;
-    }
-    
-    .additional-content {
-      margin-top: 50px;
-    }
-    
-    .additional-content h2 {
+
+    .box-title {
       font-size: 24px;
       font-weight: bold;
       color: #333;
       margin-bottom: 20px;
-    }
-    
-    .additional-content p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 30px;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1>Bem-vindo à Página de Inserção</h1>
-    <p>Selecione uma opção abaixo para inserir conteúdo:</p>
-    <a href="/article/new" class="btn btn-primary">Inserir Palavras no Glossário</a><br>
-    <a href="/testm/new" class="btn btn-secondary">Inserir Testemunhos</a><br>
-    <a href="/member/new" class="btn btn-primary">Inserir Membros</a><br>
-    <a href="/insertn" class="btn btn-secondary">Inserir Eventos e Notícias</a><br>
-    <a href="#" class="btn btn-primary">Inserir Membros</a><br>
-    
+  <div class="center" style="display: flex;justify-content: center; align-items: center;"><button class="btn btn-secondary" onclick="window.location='/main'">Go Back</button></div>
+
+    <h1>Bem-vindo à Página de Modificações</h1>
+    <p>Selecione uma opção:</p>
+    <div class="btn-box-container">
+      <div class="btn-box">
+        <div class="box-title">Glossário</div>
+        <a href="/article/new" class="btn btn-primary">Inserir</a>
+        <a href="/article/delete" class="btn btn-primary">Apagar</a>
+        <a href="/article/update" class="btn btn-primary">Alterar</a>
+      </div>
+      <div class="btn-box">
+        <div class="box-title">Testemunhos</div>
+        <a href="/testm/new" class="btn btn-secondary">Inserir</a>
+        <a href="/testm/delete" class="btn btn-secondary">Apagar</a>
+        <a href="/testm/update" class="btn btn-secondary">Alterar</a>
+      </div>
+      <div class="btn-box">
+        <div class="box-title">Reports</div>
+        <a href="/insreports" class="btn btn-primary">Inserir</a>
+        <a href="/arch/delete" class="btn btn-primary">Apagar</a>
+        <a href="/arch/update" class="btn btn-primary">Alterar</a>
+      </div>
+      <div class="btn-box">
+        <div class="box-title">Membros</div>
+        <a href="/member/new" class="btn btn-secondary">Inserir</a>
+        <a href="/member/delete" class="btn btn-secondary">Apagar</a>
+        <a href="/member/update" class="btn btn-secondary">Alterar</a>
+      </div>
+      <div class="btn-box">
+        <div class="box-title">Eventos/News</div>
+        <a href="/insertn" class="btn btn-primary">Inserir</a>
+        <a href="/insertnn" class="btn btn-primary">Apagar</a>
+        <a href="/insertnnn" class="btn btn-primary">Alterar</a>
+      </div>
+    </div>
+
     <div class="additional-content">
       <h2>Informações Adicionais</h2>
       <p>Universidade da Madeira 2022/2023</p>

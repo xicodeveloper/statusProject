@@ -9,7 +9,8 @@ var testmSchema = mongoose.Schema({
   },
   data:{type:String},
   author:{type:String},
-  content:{type:String}
+  content:{type:String},
+  
 });
 
 module.exports= mongoose.model('Testemunha', testmSchema);

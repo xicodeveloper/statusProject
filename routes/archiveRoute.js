@@ -1,7 +1,13 @@
 const router=require("express").Router();
-
-router.get('/arch',function (req,res) {
-res.render("arch")
+const reports=require("../model/reports")
+router.get('/arch', async function (req,res) {
+    try {
+  
+        const report = await reports.find({});
+        res.render("arch", {report:report})
+      } catch (error) {
+        console.log("ERROR:", error);
+      }
 })
 
 module.exports=router;

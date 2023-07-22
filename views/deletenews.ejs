@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Delete Reports</title>
+    <%-include("../views/partials/head.ejs") %>
+</head>
+<body>
+    <div class="center" style="display: flex;justify-content: center; align-items: center;"><button class="btn btn-secondary" onclick="window.location='/ins'">Go Back</button></div>
+        <div class="flexRepo" style="display: flex; flex-direction: column; gap:10px;flex: 1; width: 100%;justify-content: center;align-items: center;">
+            <h1>News existentes</h1>
+            <% news.forEach((news) => { %>
+                <form action="/insertnn/delete/<%= news._id %>" method="post">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p style="color: #000; text-align: center; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 400; line-height: 100px;"> <%= news.title %></p>
+                        <button style="max-width: 100px;" type="submit" onclick="confirmDelete(event)" name="apagaReport" value="<%= news._id %>" class="btn btn-primary">Apagar</button>
+                    </div>
+                </form>
+            <% }) %>
+            
+            
+        </div>
+        
+  
+   
+        <script>
+
+            function confirmDelete(event) {
+                event.preventDefault();
+                if (window.confirm("Deseja apagar?")) {
+                    event.target.closest("form").submit();
+                } else {
+                    // Do nothing or handle the cancel action (stay on the page)
+                }
+            }
+        
+        </script>
+</body>
+</html>

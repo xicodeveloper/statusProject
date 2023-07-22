@@ -5,14 +5,13 @@
     <title>Article</title>
     <%- include("../views/partials/head.ejs") %>
     <style>
-         .S21 {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            height: 100svh !important;
-           
-            background: #76B7E3;
-        }
+ .S {
+    position: relative;
+    width: 100%;
+    min-height: 170vh !important;/* Set a minimum height of 100vh (viewport height) */
+    background: #FF78A9;
+}
+
 
         .divst {
             position: absolute;
@@ -167,6 +166,17 @@
             line-height: 25px;
             word-wrap: break-word;
         }
+        html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.S21 {
+  height: 100vh;
+  min-height: 100%;
+  box-sizing: border-box;
+  background: #FF78A9;
+}
     </style>
 </head>
 <body>
@@ -175,7 +185,7 @@
         <div class="divst">
             <h1 class="st">Glossary</h1>
         </div>
-        <div class="divart">
+        <div class="divart" style="margin: 0; padding: 0;">
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.</h1>
         </div>
     </div>

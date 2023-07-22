@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Testemunho</title>
+    <style>
+        .S1yellow {
+          min-width: 100%;
+          min-height: 100svh;
+          background: #0BE3A3;
+        }
+        .flexArch{
+          margin-left: 80px;
+          display: flex;
+          flex-direction: column;
+          display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex-grow: 0;
+      flex-shrink: 1;
+        }
+      .small-p{
+       
+        display: inline-block;
+        color: #303036;
+font-size: 16px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+      }
+      .small-g{
+        color: #0BE3A3;
+font-size: 16px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+      }
+      .lt-g{
+        margin-left: 50px;
+      }
+      .lt-p{
+        margin-left: 90px;
+      }
+        .s2y {
+          position: relative;
+          width: 100%;
+          min-height: 100vh;
+          min-height: 100svh;
+          background: #FFFF;
+        }
+      
+      
+        .divsty h1 {
+          color: #303036;
+          font-size: 92px;
+          font-family: Montserrat;
+          font-weight: 300;
+          line-height: 85px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .divarty {
+          min-width: 459px;
+          min-height: 123px;
+        }
+      
+        .divarty h1 {
+          color: #303036;
+          font-size: 45px;
+          font-family: Montserrat;
+          font-weight: 300;
+          line-height: 54px;
+          margin: 0;
+          text-align: left;
+        }
+        .grid-cont {
+  display: grid;
+  
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 107px;
+  margin-top: 50px;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+margin-right: 100px;
+  grid-auto-flow: dense; 
+  
+}
+.conta:hover {
+  transform: scale(1.05); /* Increase the size using scale transformation */
+}
+@media (max-width: 900px) {
+  .grid-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+  .flexArch{
+    margin: 0;
+    padding: 0;
+  }
+  #desaparece{
+    display: none;
+  }
+  .grid-p {
+    min-width: auto;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+  .flexArch{
+    margin: 0;
+    padding: 0;
+  }
+  #desaparece{
+    display: none;
+  }
+  .grid-p {
+    min-width: auto;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+
+        .conta {
+          min-width: 359px;
+         
+          transition: transform 0.3s;
+  transform-origin: top left;
+        }
+      .cont-7{
+        grid-column: 2/-1;
+        grid-row: 3/5;
+
+      }
+        .cont-1, .cont-3, .cont-4, .cont-5, .cont-6, .cont-7, .cont-8{
+          border-top: 3px solid #333;
+          border-right: none;
+          border-bottom: none;
+          border-left: none;
+        }
+      
+        .cont-2 {
+        background: #0BE3A3;
+        border: none !important;
+        }
+        .cont-4 , .cont-8{
+        background: #0BE3A3;
+        border: none !important;
+        max-width: max-content;
+        }
+      
+        .cont-4 {
+          grid-column: 1/3;
+          grid-row: 2/3;
+        }
+      
+        .cont-4 {
+          min-width: 270px;
+        }
+      
+        .cont-1 article, .cont-3 article, .cont-5 article {
+          color: #303036;
+          font-size: 30px;
+          font-family: Montserrat;
+          line-height: 40px;
+        }
+      
+        .cont-2 article {
+          color: #FDFAFF;
+          font-size: 30px;
+          font-family: Montserrat;
+          line-height: 40px;
+        }
+      
+        .cont-1 .identidade, .cont-3 .identidade, .cont-5 .identidade {
+          position: relative;
+          color: #303036;
+          font-size: 16px;
+          font-family: Montserrat;
+          font-weight: 700;
+        }
+      
+        .cont-2 .identidade {
+          position: relative;
+          color: #FDFAFF;
+          font-size: 16px;
+          font-family: Montserrat;
+          font-weight: 700;
+        }
+      
+        .cont-2 .dataa {
+          color: #FDFAFF;
+        }
+      
+        .cont-2 .hastags {
+          color: #FDFAFF;
+        }
+      
+        .identidade,
+        .dataa {
+          display: inline-block;
+          /* Additional styling properties if needed */
+        }
+      
+        .dataa {
+          margin-left: 50px;
+        }
+      
+        .cont-4 h8 {
+          color: #303036;
+          font-size: 30px;
+          font-family: Montserrat;
+          line-height: 40px;
+        }
+      
+        .image-container {
+          position: relative;
+          margin-top: 30px;
+          overflow: hidden;
+        }
+      
+        .image-container img {
+          min-width: 100%;
+          display: block;
+          min-height: 271px;
+        }
+.contas{
+  min-width: 334px;
+  color: #303036;
+font-size: 30px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 400;
+line-height: 40px;
+}
+.grid-p{
+  position: relative;
+  margin-top: 61px;
+display: flex;
+flex-direction: column;
+width: 1320px;
+margin-left: 101px;
+
+
+}
+.iten{
+min-height: 100px;
+
+  flex-grow: 1;
+  justify-content: center;
+border-left: none;
+border-right: none;
+border-bottom: none;
+border-top: 3px solid #333;
+}
+.iten div:first-of-type{
+  color: #303036;
+font-size: 22px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+}
+.iten p:last-of-type{
+  color: #303036;
+font-size: 18px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+@media (max-width: 900px) {
+  .grid-p {
+    width: auto;
+    margin-left: 50px;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-p {
+    width: auto;
+    text-align: left;
+    margin-left: 50px;
+    min-height: 500px;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .iten {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .iten {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+  .tifw:hover {
+    transform: scale(1.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .tifw:last-child:hover {
+    max-width: 23.79%;
+    transform: scale(1.0);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  
+@media (max-width: 900px) {
+  .iten div:first-of-type,
+  .iten p:last-of-type {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .iten div:first-of-type,
+  .iten p:last-of-type {
+    margin: 10px;
+  }
+}
+.i-nav{
+  min-height: 75px;
+}
+#first{
+  grid-column: 1/3;
+  grid-row: 1/2;
+
+
+}
+#second{
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+.navigation a{
+  color: #303036;
+font-size: 20px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+
+
+.hal p{
+  color: #FDFAFF;
+font-family: Montserrat;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 133.333% */
+
+}
+.hal .small-p{
+  color: #FDFAFF;
+
+}
+.navigation a:hover{
+  color: #303036;
+font-size: 20px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.areaarch a:focus {
+  outline: none;
+  text-decoration: none !important;
+      color: inherit;
+}
+.image-grid {
+  background-image: url("images/background_photo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navigation{
+  position: absolute;
+display: flex;
+  flex-wrap: wrap;
+
+  justify-content:flex-start;
+  align-items: flex-start;
+  bottom: 0;
+  flex: 1;
+  width: 100%;
+}
+.tifw{
+  display: flex;justify-content: center;align-items: center;
+    width: 25%;
+  color: #303036;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+a, li {
+      text-decoration: none !important;
+    }
+    a:hover, li:hover{
+      text-decoration: none !important;
+    }
+    a:visited , li:hover{
+      text-decoration: none !important;
+    }
+      </style> 
+    <%- include("../views/partials/head.ejs") %>
+    
+</head>
+<body>
+    <div class="S1yellow">
+      <header>
+        <%- include("../views/partials/navBar.ejs") %>
+    </header>
+    <div class="flexArch">
+        <div class="divsty">
+          <h1 class="sty">NEWS & EVENTS</h1>
+        </div>
+        <div class="divarty">
+          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.Lorem500 Lorem500</h1>
+        </div>
+    </div>
+    <div class="fS1" style="display: flex; position: absolute; bottom: 0; flex-direction: row; width: 100%; min-height: 100px;">
+      <div class="tifw if-1" style="background: #76B7E3;"><a href="#" style="text-decoration: none;outline: none;color: inherit;"> Co-Culture Space / Lab</a></div>  
+     <div class="tifw if-2" style="background: #C981F5; "> <a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Glocal Coffee Breaks</a></div>
+      <div class="tifw if-3" style="background: #FF78A9;"><a href="/#team-section" style="text-decoration: none;outline: none;color: inherit;">Intercultural Workshops</a></div>
+      <div class="tifw if-4" style="background: #303036;;color: #FDFAFF;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;"><a href="/arch#wow" style="text-decoration: none;outline: none;color: inherit;"> Reports</a></div>
+      <div class="tifw i-nav" class="areaarch" >
+        <form action="/search" method="post">
+          <svg xmlns="http://www.w3.org/2000/svg" width="170" height="34" viewBox="0 0 136 34" fill="none" style="position: relative;">
+            <path d="M119.031 1H16.8549C8.09849 1 1 8.13546 1 16.9375C1 25.7395 8.09849 32.875 16.8549 32.875H119.031C127.788 32.875 134.886 25.7395 134.886 16.9375C134.886 8.13546 127.788 1 119.031 1Z" stroke="#303036" stroke-width="2"/>
+            <foreignObject x="10" y="5" width="90" height="24">
+              <input type="text" id="searchInput" style="border: none; background: transparent; min-width: 100px; outline:none" name="query" placeholder="Search"/>
+            </foreignObject>
+            <foreignObject x="120" y="8" width="20" height="20">
+              <button style="background: none; border: none; position: absolute; top: 0; right: 9px;" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" style="left: -1px; position: absolute;">
+                  <path d="M7.87703 14.3088C11.3364 14.3088 14.1408 11.4898 14.1408 8.01244C14.1408 4.53505 11.3364 1.71606 7.87703 1.71606C4.41766 1.71606 1.61328 4.53505 1.61328 8.01244C1.61328 11.4898 4.41766 14.3088 7.87703 14.3088Z" stroke="#303036" stroke-width="2.222" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15.7064 15.8828L12.3008 12.4595" stroke="#303036" stroke-width="2.222" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </foreignObject>
+          </svg>
+        </form>       
+      </div>
+    </div>
+
+    </div>
+    <div class="s2y">
+      <div class="div2">
+        <div class="titgg" style="margin-top: 140px; margin-left: 100px; margin-bottom: 50px;">
+            <div class="lineMis" style="width: 115px; height: 3px; display: inline-block;"></div>
+            <h4 style="display: inline-block; margin: 0; color: #303036; font-family: Montserrat; font-size: 100px; font-style: normal; font-weight: 300; line-height: 100px; letter-spacing: 1px;">IDEAS LAB</h4>
+        </div>
+        <div class="fIm" style="display: flex; flex-direction: row; margin-left: 191px; gap: 60px;">
+          <div class="" style="max-width: 370px; max-height: 555px; border-right: 3px solid #000; overflow: visible;">
+              <img src="images/L.png" alt="" srcset="" style="display: block; width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="" style="max-width: 526px;">
+              <article style="color: #303036; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px;">
+                Este evento compreendeu a apresentação de projetos em curso realizados por discentes e docentes, com a intervenção de especialistas em estudos linguísticos e áreas interdisciplinares já iniciado no âmbito da unidade curricular – Pragmática, Discurso e Cognição, num diálogo alargado a especialistas nacionais e internacionais e a estudantes no âmbito da unidade curricular Projetos, Dissertações e Estágios 2021-2022, do 2º ciclo em Linguística: Sociedades e Culturas.
+                Num segundo momento, integrado nas atividades de arranque do projeto Steering Transition and Advancement of Tertiary Underrepresented Students – status, no âmbito do qual a UMa assume o papel de parceiro, e que coordenamos, procedeu-se à apresentação desta iniciativa, nas suas linhas gerais, e, mais especificamente, no que se refere aos Project Results 1 e 2, tendo em vista: uma reflexão transdisciplinar, que esta sessão pluricontinental e multidisciplinar, excecionalmente, viabiliza; a recolha de potenciais contributos concetuais por parte dos diversos participantes nesta sessão; e o debate de possíveis vias de desenvolvimento de trabalhos académicos que possam beneficiar das diversas vertentes de investigação e ação prática, contempladas pelo mesmo.
+                Dado o potencial interesse desta iniciativa para um conjunto alargado de elementos da Academia, tanto ao nível do corpo docente como do corpo discente, e, conforme referido, delineando-se um leque significativo de áreas científicas que poderão beneficiar, de múltiplas formas, com uma ligação a este projeto, convidou-se o conjunto da comunidade académica a participar nesta sessão.
+              </article>
+          </div>
+      </div>
+      <div style="color: #303036;
+font-family: Montserrat;
+font-size: 100px;
+font-style: normal;
+font-weight: 300;
+line-height: 100px;margin-top: 100px; margin-left: 100px;">
+  <p style="display: block;">DISCOURSES</p>
+  <div style="width: 100px; height: 3px; border: 3px solid #303036; display: inline-block;"></div>
+  <p style="display: inline-block;">IN INTERACTION</p>
+</div>
+<div class="" style="max-width: 1068px;margin-left: 100px;margin-top: 50px;
+min-height: 391px;">
+  <article style="color: #303036;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;"><strong>Guest Speakers:</strong><br><br>
+Artur Piskorz (Erasmus+ visiting scholar; Professor at the Pedagogical University of Krakow, University of Katowice, PL) <br><br>
+Arthur Filipe Araújo (Assistant Professor at the Lusophone University of Porto, O’Porto, PT; UA) <br><br>
+<strong>Session 1</strong><br><br>
+ Conference & Forum discussion with former and current LeRE students on (ongoing) research outcomes <br>
+ <strong>Part I:</strong>  Fusion or confusion? Multi-ethnic Britain / <strong>Part II:</strong> Tourism induced by Negative Portrayals in Films <br><br> <strong>Session 2</strong><br> Workshop Fusion or confusion? Multi-ethnic Britain: film viewing and discussion
+  
+  </article>
+</div>
+<div style="color: #303036;
+font-family: Montserrat;
+font-size: 100px;
+font-style: normal;
+font-weight: 300;
+line-height: 100px;margin-top: 100px; margin-left: 100px;">
+  <p style="display: block;">CRIAÇÃO</p>
+  <div style="width: 100px; height: 3px; border: 3px solid #303036; display: inline-block;"></div>
+  <p style="display: inline-block;">DE JOGOS</p>
+</div>
+
+</div>  <div class="fIm" style="display: flex; flex-direction: row; margin-left: 191px; gap: 60px;">
+  <div class="" style="max-width: 370px; max-height: 800px;  overflow: visible;display: flex;flex-direction: column;">
+    <img src="images/up.png" alt="" srcset="" style="display: block; width: 100%; height: 100%; object-fit: contain;">
+
+      <img src="images/up.png" alt="" srcset="" style="transform: rotate(-179.93deg);display: block; width: 100%; height: 100%; object-fit: contain;">
+  </div>
+  <div class="" style="max-width: 526px;">
+    <article style="color: #303036; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px;">
+      <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li>Concepção, implementação e teste de protótipos de jogos destinados à prática de competências interculturais, com o objetivo de ajudar estudantes do Ensino Superior sub-representados a desenvolver e consolidar competências interpessoais e interculturais a usar durante os seus estudos para melhor responder aos desafios interculturais que possam enfrentar.</li>
+      </ul>
+      <br>
+      <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li>São objetivos principais:</li>
+        <li>-Permitir a interação entre estudantes, locais e não locais, independentemente da sua filiação, cultura, religião, proveniência geográfica, nível económico, domínio da língua local, e domínio cultural específico, em ambiente favorável à construção de laços através de afinidades electivas (desporto, arte, entretenimento, e outros).</li>
+        <li>-Permitir a aquisição de conhecimentos específicos sobre a geografia, história e cultura locais, que se revelem úteis nos processos de interação com o meio – nomeadamente numa fase introdutória – por parte de estudantes não locais.</li>
+        <li>-Quebrar estereótipos: culturais / sociais / raciais / de género, através da identificação de laços comuns, transversais aos universos individuais.</li>
+        <li>-Disponibilizar meios auxiliares à planificação das atividades quotidianas / académicas / sociais, de estudantes não locais, privilegiando a visualização da informação (exemplos: planificação e temporização das deslocações e recurso a marcadores geográficos de referência imediata; calendarização do percurso académico e atividades relacionadas).</li>
+        <li>-Disponibilizar meios para a partilha de histórias individuais, geografias, realidades culturais (donde vim / como me vejo / como entendo o momento em que estou / como vos vejo), por parte de estudantes não locais, a partir de templates editáveis.</li>
+        <li>-Disponibilizar um ambiente para a criação de ficções, fundadas nas vivências individuais de diferentes realidades culturais e sociais, com recurso a um elenco-base de elementos linguísticos e visuais icónicos, passíveis de serem aditados e editados pelos jogadores.</li>
+      </ul>
+    </article>
+    
+  </div>
+</div>
+<div style="color: #303036;
+font-family: Montserrat;
+font-size: 100px;
+font-style: normal;
+font-weight: 300;
+line-height: 100px;margin-top: 100px; margin-left: 100px;">
+  <p style="display: block;">DESENVOLVIMENTO </p>
+  <div style="width: 100px; height: 3px; border: 3px solid #303036; display: inline-block;"></div>
+  <p style="display: inline-block;">DE COMPETÊNCIAS</p>
+</div>
+<div class="where" style="margin-left: 100px;margin-right: 100px;border-bottom: 3px solid #000;">
+  <div class="c1" ><img style="
+      max-width: 100%;
+      max-height: 877.542px;" src="images/background_photo.png" alt="" srcset=""></div>
+  <div class="c2" style="display: flex; justify-content: flex-end">
+      
+      <p>1/12</p>
+  </div>
+  <div class="c3" style="display: flex; justify-content: flex-end;;padding: 20px;">
+      <svg style="margin-right: 67px;" xmlns="http://www.w3.org/2000/svg" width="22" height="14" viewBox="0 0 22 14" fill="none">
+          <path d="M6.86616 14L8.03826 12.8058L3.0517 7.86112L22 7.86112V6.11137L3.0517 6.11137L8.03826 1.19489L6.86616 9.53674e-07L0 7.00033L6.86616 14Z" fill="#303036"/>
+        </svg>
+        <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="22" height="14" viewBox="0 0 22 14" fill="none">
+          <path d="M6.86616 14L8.03826 12.8058L3.0517 7.86112L22 7.86112V6.11137L3.0517 6.11137L8.03826 1.19489L6.86616 9.53674e-07L0 7.00033L6.86616 14Z" fill="#303036"/>
+        </svg>
+  </div>
+</div>
+<p style="color: #303036;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 25px; /* 156.25% */;margin-left: 100px;margin-right: 123px; margin-top: 30px;">No âmbito do Resultado 4 –STATUS UMa Trabalho de colaboração com o Instituto Superior de Administração e Línguas da Madeira Curso: Gestão e Turismo / U.C. Metodologias de Pesquisa</p>
+        <%- include("../views/partials/footer.ejs") %>
+    </div>
+
+
+    
+</body>
+</html>

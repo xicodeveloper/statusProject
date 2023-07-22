@@ -237,7 +237,7 @@ margin-right: 100px;
         .image-container img {
           min-width: 100%;
           display: block;
-          min-height: 471px;
+          min-height: 271px;
         }
 .contas{
   min-width: 334px;
@@ -452,7 +452,7 @@ a, li {
         </div>
     </div>
     <div class="fS1" style="display: flex; position: absolute; bottom: 0; flex-direction: row; width: 100%; min-height: 100px;">
-      <div class="tifw if-1" style="background: #76B7E3;"><a href="/#divH" style="text-decoration: none;outline: none;color: inherit;"> Co-Culture Space / Lab</a></div>  
+      <div class="tifw if-1" style="background: #76B7E3;"><a href="/lab" style="text-decoration: none;outline: none;color: inherit;"> Co-Culture Space / Lab</a></div>  
      <div class="tifw if-2" style="background: #C981F5; "> <a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Glocal Coffee Breaks</a></div>
       <div class="tifw if-3" style="background: #FF78A9;"><a href="/#team-section" style="text-decoration: none;outline: none;color: inherit;">Intercultural Workshops</a></div>
       <div class="tifw if-4" style="background: #303036;;color: #FDFAFF;
@@ -460,7 +460,7 @@ a, li {
       font-size: 20px;
       font-style: normal;
       font-weight: 300;
-      line-height: normal;"><a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Reports</a></div>
+      line-height: normal;"><a href="#wow" style="text-decoration: none;outline: none;color: inherit;"> Reports</a></div>
       <div class="tifw i-nav" class="areaarch" >
         <form action="/search" method="post">
           <svg xmlns="http://www.w3.org/2000/svg" width="170" height="34" viewBox="0 0 136 34" fill="none" style="position: relative;">
@@ -515,8 +515,10 @@ a, li {
                 </div>
                 <div class="hastags" style="color: #FDFAFF;">#lol</div>
                 <div class="image-container">
-                    <img id="desaparece" src="images/background_photo.png" style=" width: 752.569px;
-                    height: 16.375px;" alt="">
+                    <img id="desaparece" src="images/LAY.png" style="
+                    width: 266px 
+                    ;
+                    MAX-height: 714px;" alt="">
                 </div>
             </div>
             <div class="conta cont-5">
@@ -587,46 +589,32 @@ a, li {
               
                   
         </div>
-        <div class="grid-p">
-          <div class="iten iten-1" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
-            <div style="max-width: 642px;">
-              CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
-            </div>
-            <div>Quarterly Report<br>25/07/2022</div>
-            <div style="align-self: flex-start;" >
-              <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
-            </div>
-          </div>
-            <div class="iten iten-2" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
-              <div style="max-width: 642px;">
-                CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
-              </div>
-              <div>Quarterly Report<br>25/07/2022</div>
-              <div style="align-self: flex-start;" >
-                <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
-              </div>
-            </div>
-            <div class="iten iten-3" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
-              <div style="max-width: 642px;">
-                lorem5000CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
-              </div>
-              <div>Quarterly Report<br>25/07/2022</div>
-              <div style="align-self: flex-start;" >
-                <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
-              </div>
-            </div>
+        <div class="grid-p" id="wow">
+
+          <% report.forEach((report) => { %>
             
-            <div class="iten iten-4" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
+            <div class="iten iten-1" style="justify-content: space-between;display:flex; flex-direction:row;flex-wrap: wrap;flex-grow: 1; flex-shrink: 1;margin: 0;padding: 0;">
               <div style="max-width: 642px;" >
-                CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students
+                <div class="flexfich" style="color: #303036;
+                font-family: Montserrat;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 30px;display: flex;flex-direction: column; gap: 5px;">
+                  <p id="titficheiro" style="margin: 0;padding: 0;"><strong><%=report.title%></strong></p>
+                  <p id="dataficheiro" style="margin: 0;padding: 0;"><%=report.data%></p>
+                  <p id="dataficheiro" style="margin: 0;padding: 0;">Prepared by: <%=report.name%></p>
+                </div>
+                <p style="display: none;" id="ficheiro"><%=report.file%></p>
+                <p style="display: none; "id="contentficheiro"><%=report.content%></p>
               </div>
-              <div>Quarterly Report<br>25/07/2022</div>
-              <div style="align-self: flex-start;" >
+              <div style="margin-top: 10px; left: 70%; position: absolute;"><strong>Abrir anexo</strong></div>
+              <div style="align-self: flex-start; margin-top: 10px;" >
                 <button class="clica" style="border:none;padding: 0; margin: 0; list-style: 0; background-color: transparent;"><img src="images/Componente 1 – 8.png" alt="" srcset=""></button>
               </div>
             </div>
+            <%})%>
             
-           
           
         </div>
         <%- include("../views/partials/footer.ejs") %>
@@ -657,18 +645,30 @@ for (let index = 0; index < buttons.length; index++) {
 function openItem(item, index) {
   item.classList.add("open");
   item.dataset.previousContent = item.innerHTML;
+  let reportTitle = item.querySelector("#titficheiro").textContent;
 
+  let reportFich = item.querySelector("#ficheiro").textContent;
+    let reportFile = item.querySelector("#dataficheiro").textContent;
+    let reportContent = item.querySelector("#contentficheiro").textContent;
   var htmlString = `
-  <div class="iten iten-${index + 1}" style="position: relative;display: grid; grid-auto-columns: minmax(102px, auto);grid-auto-rows: minmax(100px, auto);grid-template-columns: 1fr 1fr 1fr; margin: 0; padding: 0;">
+  <div class="iten iten-${index + 1}" style="color: #303036;
+font-family: Montserrat;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 40px; /* 181.818% */;position: relative;display: grid; grid-auto-columns: minmax(102px, auto);grid-auto-rows: (100px,auto);grid-template-columns: 1fr 1fr 1fr; margin: 0; padding: 0;">
     <div id="first" style="color: #303036; text-align: left;font-size: 35px; font-family: Montserrat; font-style: normal; font-weight: 400; line-height: 40px;min-width: 385px; min-height: 99px;">
-      <h8>CS-HE cooperation toolkit on increasing access and supporting achievement of underrepresented students</h8>
+      <h8><strong>${reportTitle}</strong></h8>
     </div>
-    <div id="second" class="textt" style="color: #303036; text-align: left;font-size: 18px; font-family: Montserrat; font-style: normal; font-weight: 400; line-height: 25px; min-width: 385px; min-height: 99px;">
-      <p>Lorem ipsum dolorLORE LOREM sit amet, consectetur adipisicing elit. Ipsam aut quo reiciendis debitis? Nesciunt similique id tenetur at porro odit molestias fugiat officia, dolorem voluptate. Sunt facere unde dolor amet!</p>
+    <div id="second" class="textt" style="grid-row:3/4; grid-column:1/2;color: #303036; text-align: left;font-size: 18px; font-family: Montserrat; font-style: normal; font-weight: 400; line-height: 25px; min-width: 385px; min-height: 99px;">
+      <p> ${reportFile}</p>
+    </div>
+    <div id="third" class="textt" style="grid-row:2/3; grid-column:1/2;color: #303036; text-align: left;font-size: 18px; font-family: Montserrat; font-style: normal; font-weight: 400; line-height: 25px; min-width: 385px; min-height: 99px;">
+      <p> ${reportContent}content</p>
     </div>
     <div>
       <div>
-        <p style="margin-left: 20px;">Quarterly Report <br>25/07/2022<br><span class="small-g">#status<span class="lt-g">#events</span></p>
+        <p style="margin-left: 20px;margin-top:90px;grid-row:1/2; grid-column:2/3;"><span class="small-g">#status<span class="lt-g">#events</span></p>
       </div>
     </div>
 
@@ -679,14 +679,12 @@ function openItem(item, index) {
     <div style="display: flex; gap: 20px;flex-direction: row;align-items: center;margin: 0; padding: 0; list-style: none; grid-column: 3/-1; grid-row: 2/4;">
       <img src="images/Grupo 70 (1).png" alt="" srcset="">
       <div class="flexxxx" style="display: flex; flex-direction: column;">
-        <p><a href="/arquivos/20220318_Management baseline evaluation report.pdf">Open</a></p>
-        <p><a href="/arquivos/20220318_Management baseline evaluation report.pdf" download>Download</a></p>
-        <p><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf" target="_blank">Share on Facebook</a></p>
-        <p><a href="mailto:?subject=Check%20out%20this%20file&body=I%20found%20this%20file%20and%20thought%20you%20might%20find%20it%20interesting:%20http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf">Share via Email</a></p>
-        <p><a href="instagram://library?AssetPath=http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf" target="_blank">Share on Instagram</a></p>
-        <p><a href="whatsapp://send?text=Check%20out%20this%20file:%20http://localhost:3030/arquivos/20220318_Management%20baseline%20evaluation%20report.pdf" target="_blank">Share on WhatsApp</a></p>
-
-      </div>
+        <p><a style="text-decoration: none; 
+      color: inherit;" href="${reportFich}">Open</a></p>
+        <p><a style="text-decoration: none; /* Remove underline */
+      color: inherit;" href="${reportFich}" download>Download</a></p>
+        <p><a style="text-decoration: none; /* Remove underline */
+      color: inherit;" href=>Share</a></p>
     </div>
   </div>
   `;

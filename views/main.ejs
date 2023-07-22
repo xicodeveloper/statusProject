@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projeto Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .description {
+            font-size: 18px;
+            margin-top: 30px;
+            text-align: center;
+            color: #444;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Projeto Status</div>
+    <div class="buttons-container">
+        <a href="/" class="btn">Site</a>
+        <a href="/ins" class="btn">Plugins</a>
+    </div>
+    <p class="description">Clique no botão "Site" para redirecionar para a página principal do projeto.</p>
+    <p class="description">Clique no botão "Plugins" para redirecionar para a página de inserção de conteúdos e plugins.</p>
+</body>
+</html>

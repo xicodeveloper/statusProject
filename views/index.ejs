@@ -129,7 +129,7 @@
     </div>
 
     </div>
-
+    
     <div class=".rec-flex4" style="align-self: flex-end; display: flex;flex-direction:row-reverse; gap: 26px;">
       <div class="quadrado4" style="position: relative;min-width: 258.631px; min-height: 325.723px;background: #FF78A9; overflow: visible;">
         <img style="position: absolute; top: -50px;right: -80px; width: 190%; height: 140%;" src="images/promover a autonomia.png" alt="" srcset="" />
@@ -213,17 +213,23 @@ line-height: 30px;">
 <p>
 </p>
 </div>
-  <div class="fTeam"  style="width: 100%;display: flex;">
-  <div class="t blue"><p>Dra. Alcina Sousa</p></div>
-  <div class="t purple"><p>Dr. Gonçalo Gouveia</p></div>
-  <div class="t green"><p style="color: #303036;
-    font-family: Montserrat;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 45px;">Dr. Gonçalo Gouveia</p><img style="width: 100%;" src="images/gonca.png" alt="" srcset=""></div>
-  <div class="t ppink"><p>Dr. Gonçalo Gouveia</p></div>
-  </div>
+
+<div class="fTeam" style="width: 100%; display: flex; position: relative;flex-wrap: wrap;">
+  <% let colors = [ 'purple','blue', 'green', 'ppink', 'green','ppink','purle','blue']; %>
+  <% team.forEach((member, index) => { %>
+    <% let colorIndex = index % colors.length; %>
+    
+
+    <div id="member<%= index%>" class="t <%=colors[colorIndex]%>" style="position: relative;">
+      <p><%= member.member_name %></p>
+      <img src="<%= member.image %>" alt="" srcset="" style="
+      width: 100%;
+      max-height: 304px;position: absolute;bottom: 0;">
+    </div>
+    
+  <% }); %>
+
+</div>
   <div style="margin-top: 140px; margin-left: 140px;">
     <h4>THE PROJECT</h4>
     <div class="same" style="display: flex; align-items: flex-end;">
@@ -232,17 +238,21 @@ line-height: 30px;">
     </div>
 </div>
 <div class="nova" style="margin-bottom: 100px;margin-top: 50px; margin-left: 75px; margin-right: 150px;  display: flex; flex-direction: row;flex:1; gap: 56px">
-<div class="sq" style="min-width: 466px;
- background-color: #76B7E3;position: relative;"><img style="position: absolute;left: 53px;bottom: 70px;" src="images/03.png" alt="" srcset=""></div>
+<div class="sq" style="max-width: 443px;
+max-height: 700px;position: relative;"><img style="" src="images/TROFEU.png" alt="" srcset="" ></div>
   <p style="color: #303036;
   font-family: Montserrat;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
-  line-height: 35px;">European HEI e-repository of good practices related to socially inclusive learning culture and EWS Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit doloremque cupiditate, commodi aliquid omnis cum non deleniti quisquam est voluptate corporis odio voluptatem incidunt expedita aliquam quos beatae iusto quibusdam quis quas laboriosam. Perferendis ea magnam dolores eaque rem animi explicabo deleniti beatae nobis, molestiae sint quasi blanditiis impedit exercitationem voluptas iusto aspernatur. Dicta praesentium eos commodi sit pariatur quod consequuntur consequatur magni aut fugiat nulla non eius quaerat minima repudiandae, enim nemo quo architecto animi accusantium ipsum tenetur ut iusto impedit! Placeat recusandae voluptatibus provident! Sapiente modi dolore quibusdam porro, laudantium deserunt quam non minima optio error quaerat vero?</p>
+  line-height: 35px;">European HEI e-repository of good practices related to socially inclusive le
+  arning culture and EWS Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impe<br><BR>
+  dit doloremque cupiditate, commodi aliquid omnis cum non deleniti quisquam est voluptate<BR><br>
+   <span style="color: #76B7E3;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nemo facere, excepturi consectetur facilis amet maxime vero sapiente soluta quibusdam repellat earum dolor, eius expedita. Exercitationem eveniet iste corporis!</span>nrbr <br><br>corporis odio voluptatem incidunt expedita aliquam quos beatae iusto quibusdam quis quas laboriosam. Perferendis ea magnam dolores eaque rem animi explicabo deleniti beatae nobis, molestiae sint quasi blanditiis impedit exercitationem voluptas iusto aspernatur. Dicta praesentium eos commodi sit pariatur quod consequuntur consequatur magni aut fugiat nulla non eius quaerat minima repudiandae, enim nemo quo architecto animi accusantium ipsum tenetur ut iusto impedit! Placeat recusandae voluptatibus provident! Sapiente modi dolore quibusdam porro, laudantium deserunt q
+   uam non minima optio error quaerat vero?</p>
 </div>
   </div>
-  <div class="sectionPreto" style="position: relative;">
+  <div class="sectionPreto" style="position: relative;border-bottom: 100px solid #303036;">
     <div style=" color: #FDFAFF;
     font-family: Montserrat;
     font-size: 100px;
@@ -256,95 +266,42 @@ line-height: 30px;">
           <h7>Mission</h7>
       </div>
   </div>
-    <div class="maisFlex" style="display: flex;flex: 1;flex-direction: row; gap: 170px; border-top: 88px ;margin-left: 82px;position: relative;">
-      <div class="mais1" style="display: flex;flex-direction: column; align-items: center;gap: 25px;max-width: 306.344px;"><svg xmlns="http://www.w3.org/2000/svg" width="221" height="221" viewBox="0 0 221 221" fill="none">
-        <circle cx="110.5" cy="110.5" r="110.5" fill="#76B7E3"/>
-      </svg>
-    <p style="color: #FDFAFF;margin-top: 120px;
-    color: #FDFAFF;
-font-family: Montserrat;
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;display: flex;justify-content: center;">27/12/20022 - News</p>
-    <p style="color: #FDFAFF;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;margin-bottom: 40px;">European policy brief/recommendations for improving social dimension of teaching and  learning in European HEIs.</p>
-    <a href="" style="color: #FDFAFF;
-    font-family: Montserrat;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;display: flex;justify-content: center;">Learn More <svg style="margin-left: 15px;" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
-  <path d="M14.8717 0L14.0489 1.60254L17.551 8.23686H0V10.5841H17.5505L14.0483 17.1828L14.8712 18.7854L19.6936 9.39321L14.8717 0Z" fill="#76B7E3"/>
-</svg></a>
-  </div>
-      <div class="mais2" style="display: flex;flex-direction: column; align-items: center;justify-content: center;gap: 25px;max-width: 306.344px;"><svg xmlns="http://www.w3.org/2000/svg" width="221" height="221" viewBox="0 0 221 221" fill="none">
-        <circle cx="110.5" cy="110.5" r="110.5" fill="#C981F5"/>
-      </svg>
-    <p style="color: #FDFAFF;margin-top: 120px;
-    color: #FDFAFF;
-font-family: Montserrat;
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;display: flex;justify-content: center;">27/12/20022 - News</p>
-    <p style="color: #FDFAFF;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;margin-bottom: 40px;">European policy brief/recommendations for improving social dimension of teaching and  learning in European HEIs.</p>
-      <a href="" style="color: #FDFAFF;
-      font-family: Montserrat;
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;display: flex;justify-content: center;">Learn More <svg style="margin-left: 15px;" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
-    <path d="M14.8717 0L14.0489 1.60254L17.551 8.23686H0V10.5841H17.5505L14.0483 17.1828L14.8712 18.7854L19.6936 9.39321L14.8717 0Z" fill="#76B7E3"/>
-  </svg></a></div>
-      <div class="mais3" style="display: flex;flex-direction: column;align-items: center; justify-content: center;gap: 25px;max-width: 306.344px;">
-        <svg style="display: flex;justify-content: center;" style="display: flex;justify-content: center;" xmlns="http://www.w3.org/2000/svg" width="221" height="221" viewBox="0 0 221 221" fill="none">
-          <circle  cx="110.5" cy="110.5" r="110.5" fill="#FD778F"/>
-        </svg>
-     
-      <p style="color: #FDFAFF;margin-top: 120px;
-      color: #FDFAFF;
-  font-family: Montserrat;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;display: flex;justify-content: center;">27/12/20022 - News</p>
-      <p style="color: #FDFAFF;
-      text-align: center;
-      font-family: Montserrat;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 25px;margin-bottom: 40px;">European policy brief/recommendations for improving social dimension of teaching and  learning in European HEIs.</p>
-         <a href="" style="color: #FDFAFF;
-         font-family: Montserrat;
-         font-size: 13px;
-         font-style: normal;
-         font-weight: 400;
-         line-height: normal;display: flex;justify-content: center;">Learn More <svg style="margin-left: 15px;" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
-       <path d="M14.8717 0L14.0489 1.60254L17.551 8.23686H0V10.5841H17.5505L14.0483 17.1828L14.8712 18.7854L19.6936 9.39321L14.8717 0Z" fill="#76B7E3"/>
-     </svg></a>
-      </div>
+
+    <div class="maisFlex" style="display: flex; flex: 1; flex-direction: row;flex-wrap: wrap; gap: 320px; border-top: 88px; margin-left: 82px; position: relative;">
+      <% threeMostRecent.forEach((item) => { %>
+        <% let date = new Date(item.date); %>
+        <div class="mais" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 25px; max-width: 306.344px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="221" height="221" viewBox="0 0 221 221" fill="none">
+            <circle cx="110.5" cy="110.5" r="110.5" fill="#C981F5"/>
+          </svg>
+          <p style="color: #FDFAFF; margin-top: 120px; color: #FDFAFF; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 700; line-height: normal; display: flex; justify-content: center;">
+            <%= date.toDateString() %> - <%= item.constructor.modelName === 'News' ? 'News' : 'Event' %>
+          </p>
+          <p style="color: #FDFAFF; text-align: center; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; margin-bottom: 40px;">
+            <%= item.title %>
+          </p>
+          <a href="" style="color: #FDFAFF; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 400; line-height: normal; display: flex; justify-content: center;">
+            Learn More
+            <svg style="margin-left: 15px;" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+              <path d="M14.8717 0L14.0489 1.60254L17.551 8.23686H0V10.5841H17.5505L14.0483 17.1828L14.8712 18.7854L19.6936 9.39321L14.8717 0Z" fill="#76B7E3"/>
+            </svg>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+    
+
+
+
+
+
       
     </div>
-    <div class="groww" style="position: relative;;background-color: #FDFAFF; min-height: 150vh; border-top: 50px solid #303036;">
-      <svg style="min-width: 376.523px;
-      min-height: 699.972px;position: absolute; top: 315px;left: 800px;right: 96px;" xmlns="http://www.w3.org/2000/svg" width="377" height="700" viewBox="0 0 377 700" fill="none">
-        <path d="M376.523 0H0V699.972H376.523V0Z" fill="#76B7E3"/>
-      </svg>
+    <div class="groww" style="position: relative;;background-color: #FDFAFF; min-height: 170vh; border-top: 250px solid #FDFAFF;">
+     <img style="max-width: 939px;
+     max-height: 1003px; position: absolute;left: 500px;top: 50px; " src="images/WAVE.png" alt="" srcset="">
      <div class="are" style="min-width: 905.449px;
-     min-height: 416.65px;position: absolute;top:480px; left: 112px;color: #303036;
+     min-height: 416.65px;position: absolute;top:10px; left: 322px;color: #303036;
 font-family: Montserrat;
 font-size: 100px;
 font-style: normal;
@@ -369,6 +326,6 @@ line-height: 100px; /* 100% */">ARE YOU<br> READY TO GROW <BR><div class="LINEE"
         });
       }
     }
-  </script>
+</script>
 </body>
 </html>

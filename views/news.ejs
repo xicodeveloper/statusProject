@@ -115,18 +115,11 @@
    <%- include("../views/partials/head.ejs") %>
 </head>
 <body>
-    <div class="S1">
-        <%- include("../views/partials/navBar.ejs") %>
-        <div class="divst">
-            <h1 class="st">Create <%=selectedOption%></h1>
-        </div>
-        <div class="divart">
-            <h1>Insert <%=selectedOption%> </h1>
-        </div>
-    </div>
+
+    <div class="center" style="display: flex;justify-content: center; align-items: center;"><button class="btn btn-secondary" onclick="window.location='/insertn'">Go Back</button></div>
 
     <section class="S2">
-      <form method="POST" action="/submit-form/new" class="container" style="margin-top: -600px;" enctype="multipart/form-data">
+      <form method="POST" action="/submit-form/new" class="container" style="margin-top: -699px;" enctype="multipart/form-data">
             <h1 class="h1">News Form</h1>
             
             <div class="form-group">
