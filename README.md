@@ -1,3 +1,1 @@
-# status.github.io
-Projeto Status
-olaaa
+xicodeveloper.github.io/status.github.io/
