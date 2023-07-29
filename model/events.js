@@ -8,7 +8,8 @@ var newsSchema = mongoose.Schema({
     required: true
   },
   content: {type:String},
-  title:{type:String}
+  title:{type:String},
+  ative:{type:Boolean, default:true}
 });
 newsSchema.index({ title: 'text' });
 module.exports= mongoose.model('Event', newsSchema);

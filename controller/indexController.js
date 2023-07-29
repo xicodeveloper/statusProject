@@ -13,7 +13,7 @@ const showTeamEvent = async function (req, res) {
     const team = await Members.find({});
     const newsE = await News.find({}).sort({ date: -1 }).limit(3);
     const Ev = await Events.find({}).sort({ date: -1 }).limit(3);
-
+    const allTitles = res.locals.allTitles;
     // Merge news and events into a single array
     const combinedData = [...newsE, ...Ev];
 
@@ -22,14 +22,32 @@ const showTeamEvent = async function (req, res) {
 
     // Get the three most recent items
     const threeMostRecent = combinedData.slice(0, 3);
+   
 
-    res.render("index", { team: team, threeMostRecent: threeMostRecent});
+    // Render the main page (index page) and pass the allTitles array to the EJS template
+    res.render("index", { team: team, threeMostRecent: threeMostRecent, allTitles:allTitles});
   } catch (error) {
     console.log('Error:', error);
     res.status(500).json({ error: 'An error occurred' });
   }
 };
 
+const geraNewsE= async function(req, res){
+try {
+  const news=await News.find({});
+  const events=await Events.find({});
+  const array=[...news, events];
+  array.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Extract the first 8 items from the sorted array
+  const recentData = array.slice(0, 11);
+  const report = await Reports.find({});
+  console.log(recentData.length)
+res.render("arch", { array:recentData, report:report})
+} catch (error) {
+  console.log(error)
+}
+}
 //-------------------------GLOSS--------------------------------
 
 const formGlos = async function (req, res) {
@@ -75,6 +93,26 @@ const formPostGloss = async function (req, res) {
   }
 };
 
+const archId = async function (req, res) {
+  try {
+    const enId = req.params.enId;
+
+    // Find the report in the database by its ID
+    const enId2 = await News.findById(enId);
+    const ITo = await Events.findById(enId);
+
+
+    if (enId2) {
+      return res.render("mission", {enId2:enId2})
+    }else if(ITo){
+      return res.render("mission", {ITo:ITo})
+    }
+  } catch (error) {
+    console.log("ERROR:", error);
+    res.redirect("/ins");
+  }
+};
+
 const formDGloss = async (req, res) => {
   try {
    
@@ -88,6 +126,7 @@ const formDGloss = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+
 //----------------TESTM APAGAR---------------------------
 const formPostTestm = async function (req, res) {
   try {
@@ -451,7 +490,9 @@ const showE = async (req, res) => {
    updateReport,
    showA,
    updateMmember,
-   showM
+   showM,
+   geraNewsE,
+   archId
    
 
   };

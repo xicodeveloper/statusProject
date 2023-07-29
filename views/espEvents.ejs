@@ -122,38 +122,45 @@
   <div class="center" style="display: flex;justify-content: center; align-items: center;"><button class="btn btn-secondary" onclick="window.location='/ins'">Go Back</button></div>
     
     <section class="S2">
-        <form method="post" action="/event/update/<%= events._id %>" class="container" style="margin-top: -699px;" enctype="multipart/form-data">
-            <h1 class="h1">Testimonies Form</h1>
+        <form method="post" action="/event/update/<%= event._id %>" class="container" style="margin-top: -699px;" enctype="multipart/form-data">
+            <h1 class="h1">Events Update</h1>
             
             <div class="form-group">
-                <label for="personInput">Insert the person</label>
+                <label for="personInput">Insert the author</label>
                 <input required type="text" class="form-control" id="personInput" name="person" 
-                          placeholder="<%= events.author %>" value="<%= events.author %>">
+                          placeholder="<%= event.author %>" value="<%= event.author %>">
                 <small class="form-text text-muted">Write the name</small>
             </div>
             <div class="form-group">
               <label for="contentInput">Insert the content</label>
               <textarea required type="text" class="form-control"  name="content" cols="20" rows="5"
-                placeholder="<%= events.content %>"><%= events.content %></textarea>
+                placeholder="<%= event.content %>"><%= event.content %></textarea>
               <small class="form-text text-muted">Write the content</small>
           </div>
           <div class="form-group">
             <label for="placeInput">Insert the title</label>
             <input required type="text" class="form-control" id="placeInput" name="title" 
-                      placeholder="<%= events.title %>" value="<%= events.title %>">
-            <small class="form-text text-muted">Write the place the person lives</small>
+                      placeholder="<%= event.title %>" value="<%= event.title %>">
+            <small class="form-text text-muted">Write the title</small>
         </div>
            
             <div class="form-group">
                 <label for="imageInput">Image</label>
-                <input  type="file" value="<%= events.image %>" class="form-control" id="imageInput" name="file" accept="image/*" onchange="displaySelectedImage(event)">
+                <input  type="file" value="<%= event.image %>" class="form-control" id="imageInput" name="file" accept="image/*" onchange="displaySelectedImage(event)">
                 <small class="form-text text-muted">Upload an image file</small>
             </div>
             
+            <div class="form-group">
+                <label for="dateInput">Date</label>
+                <input required type="date" class="form-control" id="dateInput" name="date" value="<%=event.date%>" placeholder="<%=event.date%>" />
+                <small class="form-text text-muted">Enter the date</small>
+                
+            </div>
+        
             <!-- Display selected filename or placeholder image -->
-            <% if (events.image) { %>
+            <% if (event.image) { %>
                 <div class="" style="display: flex;justify-content: center; align-items: center;">
-                    <img id="selectedImage"  src="/<%= events.image %>" alt="Image Placeholder" style="max-width: 300px;">
+                    <img id="selectedImage"  src="/<%= event.image %>" alt="Image Placeholder" style="max-width: 300px;">
                 </div>
                 
             <% } else { %>

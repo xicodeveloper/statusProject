@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
 <%- include("../views/partials/head.ejs") %>
+
 </head>
 <body>
   <div class="S1H">
@@ -24,7 +25,7 @@
      </div>
   </div>
   <div class="divH" id="divH">
-    <div style="margin-top: 140px; margin-left: 140px;">
+    <div style="margin-top: 140px; margin-left: 140px;" class="aaa">
         <h4>Our</h4>
         <div class="same" style="display: flex; align-items: flex-end;">
             <div class="lineMis" style="margin-bottom: 25px;"></div>
@@ -36,7 +37,7 @@
     display: flex; flex-direction: column;
   gap:70px ">
     <div class=".rec-flex1" style="display: flex; flex-direction: row; gap:28px" >
-      <div class="quadrado" style="position: relative;width: 350px;
+      <div class="q quadrado" style="position: relative;width: 350px;
       height: 355px; background: #76B7E3; overflow: visible;">
         <img style="position: absolute; top: 40px;left: -100px; width: 160%; height: 100%;" src="images/help minoroty students.png" alt="" srcset="" />
       </div>
@@ -62,7 +63,7 @@
     </div>
     <div class=".rec-flex2" style="align-self: flex-end; display: flex;flex-direction:row-reverse;gap:26px">
     
-      <div class="quadrado2" style="position: relative;width:278.631px; height: 325.723px;background: #C981F5; overflow: visible;">
+      <div class="q quadrado2" style="position: relative;width:278.631px; height: 325.723px;background: #C981F5; overflow: visible;">
         <img style="position: absolute; top: -50px; width: 125%; right:-26px;height: 100%;" src="images/aumentar a taxa de sucesso académica.png" alt="" srcset="" />
       </div>
       <div class="div" >
@@ -96,7 +97,7 @@
     </div>
 
     <div class=".rec-flex3" style="display: flex; flex-direction: row; gap:28px" >
-      <div class="quadrado3" style="position: relative;min-width: 278.631px; min-height: 325.723px;background-color: #0BE3A3; overflow: visible;">
+      <div class="q quadrado3" style="position: relative;min-width: 278.631px; min-height: 325.723px;background-color: #0BE3A3; overflow: visible;">
         <img style="position: absolute; right: 0;top: 10px;left: -70px; width: 135%; height: 120%;" src="images/identificar medidas de apoio especificas.png" alt="" srcset="" />
       </div>
     <div class="div">
@@ -131,7 +132,7 @@
     </div>
     
     <div class=".rec-flex4" style="align-self: flex-end; display: flex;flex-direction:row-reverse; gap: 26px;">
-      <div class="quadrado4" style="position: relative;min-width: 258.631px; min-height: 325.723px;background: #FF78A9; overflow: visible;">
+      <div class="q quadrado4" style="position: relative;min-width: 258.631px; min-height: 325.723px;background: #FF78A9; overflow: visible;">
         <img style="position: absolute; top: -50px;right: -80px; width: 190%; height: 140%;" src="images/promover a autonomia.png" alt="" srcset="" />
       </div>
       <div class="div" >
@@ -230,7 +231,7 @@ line-height: 30px;">
   <% }); %>
 
 </div>
-  <div style="margin-top: 140px; margin-left: 140px;">
+  <div class="d" style="margin-top: 140px; margin-left: 140px;">
     <h4>THE PROJECT</h4>
     <div class="same" style="display: flex; align-items: flex-end;">
         <div class="lineMis" style="margin-bottom: 25px;"></div>
@@ -267,28 +268,30 @@ max-height: 700px;position: relative;"><img style="" src="images/TROFEU.png" alt
       </div>
   </div>
 
-    <div class="maisFlex" style="display: flex; flex: 1; flex-direction: row;flex-wrap: wrap; gap: 320px; border-top: 88px; margin-left: 82px; position: relative;">
-      <% threeMostRecent.forEach((item) => { %>
-        <% let date = new Date(item.date); %>
-        <div class="mais" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 25px; max-width: 306.344px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="221" height="221" viewBox="0 0 221 221" fill="none">
-            <circle cx="110.5" cy="110.5" r="110.5" fill="#C981F5"/>
-          </svg>
-          <p style="color: #FDFAFF; margin-top: 120px; color: #FDFAFF; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 700; line-height: normal; display: flex; justify-content: center;">
-            <%= date.toDateString() %> - <%= item.constructor.modelName === 'News' ? 'News' : 'Event' %>
-          </p>
-          <p style="color: #FDFAFF; text-align: center; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; margin-bottom: 40px;">
-            <%= item.title %>
-          </p>
-          <a href="" style="color: #FDFAFF; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 400; line-height: normal; display: flex; justify-content: center;">
-            Learn More
-            <svg style="margin-left: 15px;" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
-              <path d="M14.8717 0L14.0489 1.60254L17.551 8.23686H0V10.5841H17.5505L14.0483 17.1828L14.8712 18.7854L19.6936 9.39321L14.8717 0Z" fill="#76B7E3"/>
-            </svg>
-          </a>
+  <div class="maisFlex" style="display: flex; flex: 1; flex-direction: row; flex-wrap: wrap; gap: 210px; border-top: 88px; margin-left: 82px; position: relative;">
+    <% threeMostRecent.forEach((item) => { %>
+      <% let date = new Date(item.date); %>
+      <div class="mais" style="display: flex; flex-direction: column; align-items: center;  gap: 25px; max-width: 306.344px;">
+        <!-- Replace the SVG with an image -->
+        <div style="width: 221px; height: 221px; background-color: #C981F5; border-radius: 50%; overflow: hidden;">
+          <img src="<%= item.image %>" alt="Image" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-      <% }) %>
-    </div>
+        <p style="color: #FDFAFF; margin-top: 120px; color: #FDFAFF; font-family: Montserrat; font-size: 15px; font-style: normal; font-weight: 700; line-height: normal; display: flex; justify-content: center;">
+          <%= date.toDateString() %> - <%= item.constructor.modelName === 'News' ? 'News' : 'Event' %>
+        </p>
+        <p style="color: #FDFAFF; text-align: center; font-family: Montserrat; font-size: 16px; font-style: normal; font-weight: 400; line-height: 25px; margin-bottom: 40px;">
+          <%= item.title %>
+        </p>
+        <a href="arch/<%= item._id %>" style="color: #FDFAFF; font-family: Montserrat; font-size: 13px; font-style: normal; font-weight: 400; line-height: normal; display: flex; justify-content: center;">
+          Learn More
+          <svg style="margin-left: 15px;" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M14.8717 0L14.0489 1.60254L17.551 8.23686H0V10.5841H17.5505L14.0483 17.1828L14.8712 18.7854L19.6936 9.39321L14.8717 0Z" fill="#76B7E3"/>
+          </svg>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+  
     
 
 
@@ -315,17 +318,6 @@ line-height: 100px; /* 100% */">ARE YOU<br> READY TO GROW <BR><div class="LINEE"
   <div class="secGr">
 
   </div>
-  <script>
-    function smoothScroll(event) {
-      event.preventDefault();
-      const target = document.querySelector(event.target.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    }
-</script>
+ 
 </body>
 </html>

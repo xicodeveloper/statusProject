@@ -8,8 +8,11 @@ const mongoose = require("mongoose");
 const News = require("./model/news")
 const Events = require("./model/events")
 const Member = require("./model/team")
+const Glos = require("./model/glos")
+
 const Reports = require("./model/reports")
 
+const Link = require("./model/testm")
 
 
 const Testm = require("./model/testm")
@@ -35,6 +38,7 @@ app.use((req, res, next) => {
 });
 //--------------------------------------
 // Define routes
+const fs=require("fs")
 const homeRoute = require("./routes/homeRoute");
 const insreports = require("./routes/reportsRoute");
 
@@ -82,6 +86,9 @@ const labRoute = require("./routes/labRoute");
 
 
 
+
+
+
 // Connect to MongoDB
 mongoose.connect("mongodb+srv://xico:cqn0F9VdjdowvebX@cluster0.lyalupo.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
@@ -91,6 +98,7 @@ mongoose.connect("mongodb+srv://xico:cqn0F9VdjdowvebX@cluster0.lyalupo.mongodb.n
 }).catch((error) => {
   console.log("Error connecting to the database:", error);
 });
+
 app.use(deleteinsRoute)
 app.use(deleteReportRoute);
 app.use(insRoute);
@@ -107,6 +115,8 @@ app.use(skateRoute);
 app.use(homeRoute);
 app.use(gameRoute);
 app.use(main);
+
+app.use(artRoute);
 app.use(insertzRoute)
 app.use(createtestmRoute);
 app.use(resoneRoute);
@@ -115,7 +125,7 @@ app.use(projectRoute);
 app.use(teamRoute);
 app.use(newsRoute);
 app.use(stateg);
-app.use(artRoute);
+
 app.use(createartRoute);
 app.use(testmRoute);
 app.use(archRoute);
@@ -129,6 +139,115 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve static files (e.g., CSS, JavaScript, images)
 app.use(express.static('public'));
+app.get("/getNews", async (req, res) => {
+  try{
+   const newsTitlesPipeline = [
+      { $project: { title: 1, _id: 0 } },
+    ];
+
+    const evTitlesPipeline = [
+      { $project: { title: 1, _id: 0 } },
+    ];
+    const [
+      newsTitles,
+      evTitles,
+    ] = await Promise.all([
+      News.aggregate(newsTitlesPipeline).exec(),
+      Events.aggregate(evTitlesPipeline).exec(),
+    ]);
+    const newsTitlesArray = newsTitles.map((item) => item.title);
+    const evTitlesArray = evTitles.map((item) => item.title);
+    const allTitlesJSON = {
+      newsTitles: newsTitlesArray,
+      evTitles: evTitlesArray,
+
+}  
+res.json(allTitlesJSON); // Send the JSON data as a response
+} catch (error) {
+  console.error("Error:", error);
+  res.status(500).send("An error occurred while fetching data.");
+}
+
+})
+app.get("/getTitles", async (req, res) => {
+  try {
+    const allTitlesPipeline = [
+      { $project: { title: "$member_name", _id: 0 } },
+      { $group: { _id: null, titles: { $push: "$title" } } },
+    ];
+
+    const reportsTitlesPipeline = [
+      { $project: { title: 1, _id: 0 } },
+    ];
+
+    const glosTitlesPipeline = [
+      { $project: { word: 1, _id: 0 } },
+    ];
+
+    const newsTitlesPipeline = [
+      { $project: { title: 1, _id: 0 } },
+    ];
+
+    const evTitlesPipeline = [
+      { $project: { title: 1, _id: 0 } },
+    ];
+
+    const tetmTitlesPipeline = [
+      { $project: { name: 1, _id: 0 } },
+    ];
+
+    const [
+      allTitlesResult,
+      reportsTitles,
+      glosTitles,
+      newsTitles,
+      evTitles,
+      testTitles,
+    ] = await Promise.all([
+      Member.aggregate(allTitlesPipeline).exec(),
+      Reports.aggregate(reportsTitlesPipeline).exec(),
+      Glos.aggregate(glosTitlesPipeline).exec(),
+      News.aggregate(newsTitlesPipeline).exec(),
+      Events.aggregate(evTitlesPipeline).exec(),
+      Testm.aggregate(tetmTitlesPipeline).exec(),
+    ]);
+
+    const allTitlesArray = allTitlesResult.length > 0 ? allTitlesResult[0].titles : [];
+    const reportsTitlesArray = reportsTitles.map((item) => item.title);
+    const glosTitlesArray = glosTitles.map((item) => item.word);
+    const newsTitlesArray = newsTitles.map((item) => item.title);
+    const evTitlesArray = evTitles.map((item) => item.title);
+    const tetmTitlesArray = testTitles.map((item) => item.name);
+
+    const allTitlesJSON = {
+      allTitles: allTitlesArray,
+      reportsTitles: reportsTitlesArray,
+      glosTitles: glosTitlesArray,
+      newsTitles: newsTitlesArray,
+      evTitles: evTitlesArray,
+      testTitles: tetmTitlesArray,
+      linkPossibleValues: [
+        "team",
+        "testimonies",
+        "reports",
+        "objetives",
+        "results",
+        "agenda",
+        "project",
+        "game",
+        "skateholders",
+        "news",
+        "events",
+      ],
+    };
+
+    res.json(allTitlesJSON); // Send the JSON data as a response
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("An error occurred while fetching data.");
+  }
+});
+
 
 // Route handler for form submission
 app.post('/insertnn/delete', async (req, res) => {
@@ -156,6 +275,8 @@ app.post('/insertnnn/update', async (req, res) => {
     res.render("updateevents", { ev: ev });
   }
 });
+
+
 
 
 app.post('/submit-form', (req, res) => {

@@ -1,31 +1,88 @@
-<style>
- .link {
-  text-decoration: none; 
-  color: inherit; 
-  position: relative;
-  transition: color 0.3s, transform 0.3s;
-}
 
-.link:before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #FDFAFF; 
-  transform: scaleX(0);
-  transition: transform 0.3s;
-}
+  <style>
+    .link {
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      transition: color 0.3s, transform 0.3s;
+    }
 
-.link:hover {
-  color: #FDFAFF; 
-}
+ 
+    .resul-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    word-wrap:break-word;
+    background-color: #76d8f9;
+    
+    border-radius: 34px;
+    padding: 10px;
+    z-index: 1;
+    max-height: fit-content; /* Set the maximum height for the results box */
 
-.link:hover:before {
-  transform: scaleX(1);
-}
-</style>
+  }
+
+  .resul-box ul {
+    list-style: none;
+    padding: 10px 0; /* Add some padding to the top and bottom of the list */
+    margin: 0;
+    color: inherit;
+  }
+
+    .resul-box li {
+      max-width: 100px;
+      
+      cursor: pointer ;
+    }
+
+    .resul-box li:hover {
+      background-color: #76B7E3;
+      color: #FDFAFF;
+      max-width: 100px;
+    }
+    .resul-box li {
+      padding: 10px 0;
+      margin-left: 0 !important;
+      max-width: 75px !important;
+    
+      cursor: pointer;
+    }
+
+    .resul-box ul li:hover::before {
+    /* Tooltip styles */
+    content: attr(title);
+    position: absolute;
+    top: -25px;
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+    .link:before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #FDFAFF;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .link:hover {
+      color: #FDFAFF;
+    }
+
+    .link:hover:before {
+      transform: scaleX(1);
+    }
+  </style>
 <header>
   <nav style="margin-bottom: 100px;">
     <ul class="nav-flex">
@@ -38,10 +95,116 @@
       <li class="back obj-3"><a class="link" href="/#team-section">The team</a></li>
       <li class="back obj-4"><a class="link" href="/resone">Results</a></li>
       <li class="back obj-5"><a class="link" href="/arch">Agenda</a></li>
-      <li class="back obj-6"><div class="area">
-        <input type="text" style="border: none; background: transparent; min-width: 20px; outline: none;color: #FDFAFF;" placeholder="Search"/>
-        <img id="lupa"src="images/Icon.png" alt="" srcset="">
+      <li class="lasttt back obj-6"><form action="/searchn" method="get" class="area" >
+        <input id="searchInput" type="text" name="in" style="border: none; background: transparent; min-width: 20px; outline: none;color: #FDFAFF;" placeholder="Search" autocomplete="off"/>
+        <button  type="submit" style="border: none; background: transparent;"><img id="lupa"src="images/Icon.png" alt="" srcset=""></button>
+        
+        <div class="resul-box" style="display: none;">
+          <ul id="searchResults" >
+           
+          </ul>
+        </form>
       </div></li>
     </ul>
   </nav>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.getElementById("searchResults");
+      const resulBox = document.querySelector(".resul-box");
+  
+      // Function to handle search and display results
+      const handleSearch = async () => {
+        const searchTerm = searchInput.value.toLowerCase();
+  
+        // Fetch the JSON data from the server
+        const response = await fetch("/getTitles");
+        const allTitlesJSON = await response.json();
+  
+        // Filter the titles that match the search term
+        const filteredTitles = allTitlesJSON.allTitles.filter((title) =>
+          title.toLowerCase().includes(searchTerm)
+        );
+  
+        const filteredReportsTitles = allTitlesJSON.reportsTitles.filter((title) =>
+          title.toLowerCase().includes(searchTerm)
+        );
+  
+        const filteredGlosTitles = allTitlesJSON.glosTitles.filter((word) =>
+          word.toLowerCase().includes(searchTerm)
+        );
+  
+        const filteredNewsTitles = allTitlesJSON.newsTitles.filter((title) =>
+          title.toLowerCase().includes(searchTerm)
+        );
+  
+        const filteredEvTitles = allTitlesJSON.evTitles.filter((title) =>
+          title.toLowerCase().includes(searchTerm)
+        );
+  
+        const filteredTestTitles = allTitlesJSON.testTitles.filter((name) =>
+          name.toLowerCase().includes(searchTerm)
+        );
+  
+        const filteredT = allTitlesJSON.linkPossibleValues.filter((name) =>
+          name.toLowerCase().includes(searchTerm)
+        );
+  
+        // Combine all filtered titles into a single array
+        const combinedFilteredTitles = [
+          ...filteredTitles,
+          ...filteredReportsTitles,
+          ...filteredGlosTitles,
+          ...filteredNewsTitles,
+          ...filteredEvTitles,
+          ...filteredTestTitles,
+          ...filteredT
+        ];
+  
+        // Clear previous search results
+        searchResults.innerHTML = "";
+  
+        // Display up to 3 results
+        for (let i = 0; i < Math.min(combinedFilteredTitles.length, 3); i++) {
+          const title = combinedFilteredTitles[i];
+          const li = document.createElement("li");
+          li.innerText = title;
+          searchResults.appendChild(li);
+        }
+  
+        // Show or hide the resulBox based on search results and input value
+        resulBox.style.display =
+          searchTerm.length > 0 && combinedFilteredTitles.length > 0 ? "block" : "none";
+      };
+  
+      // Event listener for input field on input event
+      searchInput.addEventListener("input", handleSearch);
+  
+      // Event listener for input field on focus event
+      searchInput.addEventListener("focus", handleSearch);
+  
+      // Event listener for the mousedown event instead of click
+      searchResults.addEventListener("mousedown", (event) => {
+        // Check if the clicked element is an li inside the ul
+        if (event.target.tagName === "LI") {
+          // Set the input field value to the clicked li's text content
+          searchInput.value = event.target.textContent;
+          // Hide the resulBox after selecting a result
+          resulBox.style.display = "none";
+          event.target.closest("form").submit();
+        }
+      });
+  
+      // Event listener to handle blur event on the searchInput
+      searchInput.addEventListener("blur", () => {
+        // Hide the resulBox when the input field loses focus
+        resulBox.style.display = "none";
+      });
+    });
+  </script>
+  
+  
+  
 </header>
+
+

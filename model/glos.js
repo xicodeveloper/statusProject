@@ -5,6 +5,7 @@ const glosSchema = mongoose.Schema({
   content: String,
   author: String,
   date: String,
+  ative:{type:Boolean, default:true}
 });
 
 const Gloss = mongoose.model("Gloss", glosSchema);

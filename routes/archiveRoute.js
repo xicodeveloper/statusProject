@@ -1,13 +1,8 @@
 const router=require("express").Router();
-const reports=require("../model/reports")
-router.get('/arch', async function (req,res) {
-    try {
-  
-        const report = await reports.find({});
-        res.render("arch", {report:report})
-      } catch (error) {
-        console.log("ERROR:", error);
-      }
-})
+const indexController=require("../controller/indexController")
+
+
+router.get('/arch',indexController.geraNewsE)
+router.get('/arch/:enId', indexController.archId);
 
 module.exports=router;

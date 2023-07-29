@@ -115,57 +115,57 @@
             font-weight: 500;
             line-height: 45px;
         }
-
         .flexbox {
-            position: relative;
-            display: grid;
-            width: 1302px;
-            flex-shrink: 0;
-            flex-direction: column;
-            gap: 100px;
-            
-            margin-left: 116px;
-            margin-right: 311px;
-            margin-top: 20px;
-        }
+  position: relative;
+  width: 1302px;
+  margin-left: 116px;
+  margin-right: 311px;
+  margin-top: 20px;
+  display: flex; /* Add display: flex to make it a vertical flexbox */
+  flex-direction: column; /* Set the flex direction to column */
+  gap: 20px; /* Add gap to create spacing between items */
+}
 
-        .item-flex {
-            position: relative;
-            display: grid;
-            width: 875px;
-            grid-template-columns: 100px 100px 675px;
-            grid-auto-rows: minmax(100px, auto);
-        
-        }
+/* Adjust the .item-flex class to properly display the elements in rows */
+.item-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Align items vertically in the center */
+  gap: 10px;
+  flex-wrap: wrap; /* Allow flex items to wrap to the next row */
+}
 
-        .word {
-            color: #303036;
-            font-size: 64px;
-            font-family: Alegreya;
-            font-weight: 500;
-            line-height: 45px;
-            min-width: 200px;
-            word-break: break-word;
-            hyphens: auto;
-        }
+.word {
+  color: #303036;
+  font-size: 64px;
+  font-family: Alegreya;
+  font-weight: 500;
+  line-height: 45px;
+  min-width: 200px;
+  word-break: break-word;
+  hyphens: auto;
+  /* Adjust the flex-basis to control the width of each word item */
+  /* Increase or decrease this value based on your preference */
+  flex-basis: 200px;
+}
 
-        .verticalline {
-            width: 0px;
-            border: 3px solid #000;
-            justify-self: flex-end;
-            grid-row: 1 / -1;
-            grid-column: 2;
-        }
+.verticalline {
+  width: 3px; /* Adjust the width of the vertical line */
+  height: 100px;
+  background-color: #000;
+  display: none; /* Hide vertical line elements initially */
+}
 
-        .contentLine {
-            margin-left: 10px;
-            color: #303036;
-            font-size: 24px;
-            font-family: Lato;
-            font-weight: 500;
-            line-height: 25px;
-            word-wrap: break-word;
-        }
+.contentLine {
+  flex: 1; /* Allow the content to expand and take available space */
+  color: #303036;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 25px;
+  word-wrap: break-word;
+  display: none; /* Hide content elements initially */
+}
         html, body {
   height: 100%;
   margin: 0;
@@ -189,8 +189,9 @@
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus laoreet ex tincidunt consectetur. Vivamus consequat vestibulum dictum.</h1>
         </div>
     </div>
-
-    <div class="S2">
+<p style="display: none;" id="desliza"><%=desliza%></p>
+<p id="letra" style="display: none;"><%= letra %></p>
+    <div class="S2" id="S2">
         <div class="alphabet">
             <button>A</button>
             <button>B</button>
@@ -220,11 +221,10 @@
             <button>Z</button>
         </div>
         <div class="lineart"></div>
+
         <div class="letterselected">
             <p>A</p>
-        </div>
-       
-            
+        </div>     
         <div class="flexbox">
             <% glos.forEach(element => {%>
             <div class="item-flex">
@@ -233,15 +233,49 @@
                 <div class="contentLine" style="display: none;"><%= element.content %></div>
             </div>
             <% }); %>
-            
+      
+
         </div>
         <script>
+            console.log('Script is executed');
+
             let alphabetButtons = document.querySelectorAll('.alphabet button');
             let letterSelected = document.querySelector('.letterselected p');
             let wordElements = document.querySelectorAll('.word');
             let contentElements = document.querySelectorAll('.contentLine');
             let verticallines = document.querySelectorAll('.verticalline');
 
+            let letra = document.getElementById("letra").textContent;
+            console.log('Selected Letter:', letra);
+
+            let desliza = document.getElementById('desliza').textContent.trim(); 
+
+            if (desliza) {
+                console.log('Redirecting to:', desliza);
+                window.location.href = desliza;
+            }
+
+            if (letra) {
+                let selectedLetter = letra;
+                letterSelected.textContent = selectedLetter;
+
+                console.log('Selected Letter (Uppercase):', selectedLetter);
+
+                wordElements.forEach((element, index) => {
+                    if (element.textContent.charAt(0).toUpperCase() === selectedLetter) {
+                        element.style.display = 'block';
+                        
+
+                        verticallines[index].style.display = 'block';
+                        contentElements[index].style.display = 'block';
+                    } else {
+                        element.style.display = 'none';
+                        verticallines[index].style.display = 'none';
+                        
+                        contentElements[index].style.display = 'none';
+                    }
+                });
+            }
 
             alphabetButtons.forEach(button => {
                 button.addEventListener('click', function () {
@@ -251,17 +285,17 @@
                     wordElements.forEach((element, index) => {
                         if (element.textContent.charAt(0).toUpperCase() === selectedLetter) {
                             element.style.display = 'block';
-                            verticallines[index].style.display='block';
+                            verticallines[index].style.display = 'block';
                             contentElements[index].style.display = 'block';
                         } else {
                             element.style.display = 'none';
-                            verticallines[index].style.display='none';
-
+                            verticallines[index].style.display = 'none';
                             contentElements[index].style.display = 'none';
                         }
                     });
                 });
             });
+            
         </script>
         <%- include("../views/partials/footer.ejs") %>
     </div>
