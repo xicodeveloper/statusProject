@@ -87,7 +87,7 @@
             <% report.forEach((report) => { %>
                 <div class="testm-box" style="position: relative;">
                     <p><%= report.title %></p>
-                    <form action="/arch/show/<%= report._id %>" method="GET">
+                    <form action="/rep/show/<%= report._id %>" method="GET">
                         <input type="hidden" name="glossId" value="<%= report._id %>">
                         <div class="" style="display: flex;justify-content: center; align-items: center;">
                             <button type="submit" onclick="confirmDelete(event)" class="btn btn-primary">Alterar</button>

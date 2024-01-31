@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../views/partials/head.ejs") %>
+<style>
+   body {
+    margin: 0;
+    padding: 0;
+}
+
+.calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Changed to column layout */
+    justify-content: start;
+    align-items: start;
+    width: 600px;
+    height: 600px;
+    background-color: wheat;
+}
+.head-calculator {
+    padding: 0;
+    position: relative;
+    margin: 0;
+    top: 0;
+    background-color: greenyellow;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    word-break: break-all;
+    flex-direction: column;
+    color: #303036;
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 50px; /* 100% */
+    letter-spacing: 1px;
+}
+.span-2 {
+    grid-column: span 2;
+}
+.body-calculator {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    height: 100%; /* Adjusted the height to fit within remaining space */
+}
+.body-calculator button {
+    cursor: pointer;
+    border: 1px solid greenyellow;
+}
+.last-operant{
+    padding-top: 20px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    padding-bottom: 20px;
+}
+.current-operant{
+padding: 30px;
+}
+.flex-calculator{
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    flex-direction: column;
+}
+</style>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="head-calculator">
+                <div class="flex-calculator">
+                    <div class="last-operant">12+</div>
+                    <div class="current-operant">13</div>
+                </div>
+            </div>
+            <div class="body-calculator">
+                <button class="span-2" reset>AC</button>
+                <button del>DEL</button>
+                <button sin>%</button>
+                <button num>1</button>
+                <button num>2</button>
+                <button num>3</button>
+                <button sin>*</button>
+
+                <button num>4</button>
+                <button num>5</button>
+                <button num>6</button>
+                <button sin>+</button>
+
+                <button num>7</button>
+                <button num>8</button>
+                <button num>9</button>
+                <button sin>-</button>
+
+                <button num>.</button>
+                <button num>0</button>
+                <button class="span-2" eq>=</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+class Calculator {
+    constructor(curentop, lastop) {
+        this.lastop = lastop;
+        this.curentop = curentop;
+        this.clear(); // Call the clear method to initialize the calculator
+    }
+
+    clear() {
+        this.curentop.textContent = ''; // Initialize the current operand to '0'
+        this.lastop.textContent = ''; // Clear the last operand
+        this.operation = undefined; // Clear the operation
+    }
+
+    append(number) {
+        if (this.curentop.textContent === '') {
+            this.curentop.textContent = number; // Replace '0' with the number
+        } else {
+            this.curentop.textContent += number; // Append the number to the current operand
+        }
+    }
+
+    chooseoperation(operation) {
+        this.operation=operation;
+        if (this.curentop.textContent.includes('+') || this.curentop.textContent.includes('-') || this.curentop.textContent.includes('*')|| this.curentop.textContent.includes('%') || this.curentop.textContent.includes('-')) 
+        return
+     else
+            this.append(operation);
+        
+    }
+
+    equals() {
+    if (!this.curentop.textContent || !this.operation) {
+        return; 
+    }else{
+        this.lastop.textContent=this.curentop.textContent;
+        this.curentop.textContent='';
+    }
+
+}
+
+  
+compute() {
+        if (this.lastop.textContent.includes('+')) {
+        
+            const expressionArray = this.lastop.textContent.split('+');
+            if (expressionArray.length !== 2) {
+                this.curentop.textContent = 'Invalid expression';
+            } else {
+                const num1 = parseFloat(expressionArray[0]);
+                const num2 = parseFloat(expressionArray[1]);
+
+                if (isNaN(num1) || isNaN(num2)) {
+                    this.curentop.textContent = 'Invalid expression';
+                } else {
+                    const result = num1 + num2;
+                    this.curentop.textContent = result.toString();
+                }
+            }
+        }
+    }
+}
+const curentop = document.querySelector(".current-operant");
+const lastop = document.querySelector(".last-operant");
+const num = document.querySelectorAll('[num]');
+const op = document.querySelectorAll('[sin]');
+const eq = document.querySelector('.span-2[eq]');
+
+
+const reset = document.querySelector('.span-2[reset]');
+
+const calculator = new Calculator(curentop, lastop);
+
+reset.addEventListener("click", () => {
+    calculator.clear(); 
+});
+op.forEach(op => {
+op.addEventListener("click", () => {
+
+    calculator.chooseoperation(op.textContent); 
+});
+})
+num.forEach(botao => {
+    botao.addEventListener("click", () => {
+        console.log("clicked"); 
+        calculator.append(botao.textContent);
+    });
+    });
+    eq.addEventListener("click", () => {
+calculator.equals(); 
+calculator.compute(); 
+
+});
+</script>
+</html>

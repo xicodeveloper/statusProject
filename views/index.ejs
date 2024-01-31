@@ -6,17 +6,131 @@
   <title>Homepage</title>
 <%- include("../views/partials/head.ejs") %>
 
+  <style>
+    /* Base styles for the container */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  
+    /* Styles for the logo */
+    .divstyH {
+      text-align: center;
+    }
+  
+    .styH {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    /* Styles for the text */
+    .aa span {
+      color: #FDFAFF;
+      text-align: center;
+      font-family: Montserrat, sans-serif;
+      font-size: 24px;
+      font-weight: 250;
+      line-height: 1.3;
+      margin: 10px;
+      overflow-wrap: break-word;
+    }
+  nav{
+    margin-bottom: 0 !important;
+  }
+    /* Media queries for responsiveness */
+    @media (max-width: 950px) {
+      .styH {
+        margin-left: 0 !important
+        ;
+        margin-right: 10px;
+        max-width: 40%; 
+        
+      }
+      .aa span {
+        font-size: 18px;
+        margin: 0;
+        text-align: left;
+        overflow-wrap: break-word;
+      }
+      .aa{
+        max-width: 300px;
+        margin: 0 !important;
+
+      }
+    }
+    @media (max-width: 280px) {
+      .styH {
+        margin-left: 0 !important
+        ;
+        margin-right: 10px;
+        max-width: 30%; 
+      }
+      span {
+        font-size: 18px;
+        margin: 0;
+        text-align: left;
+        word-wrap: break-word;
+
+      }
+      .aa{
+        max-width: 300px;
+        margin: 0 !important;
+
+
+      }
+    }
+    @media (max-width: 1024px) {
+      .styH {
+        margin-left: 0 !important
+        ;
+        margin-right: 10px;
+        max-width: 30%; 
+      }
+      .aa span {
+        font-size: 18px;
+        margin: 0;
+        text-align: left !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+      }
+      .aa{
+        max-width: 300px;
+        margin: 0 !important;
+
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="S1H">
     <header>
       <%- include("../views/partials/navBar.ejs") %>
   </header>
-  <div style="display: flex; justify-content: center;">
-    <div class="divstyH">
-      <h1 class="styH">To increase academic achievement success rate and prevent ESL.</h1>
+  <div class="con" style="display: grid; grid-template-columns: 1fr; justify-content: center; min-width:900px ; max-height: 500px; margin: 0;">
+    <div class="divstyH" style="display: block;">
+      <img class="styH" src="images/Status_logo_white.png" style="width: 100%; height: 100%;margin-left: 40px; "/>
     </div>
+    <div class="aa" style="margin-left: 200px;">
+      <span style="color: #FDFAFF;position: relative;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 43px;
+      font-style: normal;
+      font-weight: 250;
+      line-height: 55px; /" >To increase academic achievement sucess rate and prevent ESL.</span>
+    </div>
+    
   </div>
+
      <div class="fS1" style="display: flex; position: absolute; bottom: 0; flex-direction: row; width: 100%; min-height: 100px;">
         <div class="tif if-1" style="background: #C981F5;"><a href="/#divH" style="text-decoration: none;outline: none;color: inherit;"> Mission</a></div>  
        <div class="tif if-2" style="background: #0BE3A3; "> <a href="/skate" style="text-decoration: none;outline: none;color: inherit;"> Partners</a></div>

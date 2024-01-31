@@ -287,7 +287,7 @@ const updateGlosss = async (req, res, next) => {
     await gloss.save();
     
     // Redirect to the view page or any other appropriate route
-    res.redirect(`/article/show/${glossId}`);
+    res.redirect(`/article`);
   } catch (error) {
     console.log("ERROR:", error);
     // Handle any errors that occur during database update or redirection

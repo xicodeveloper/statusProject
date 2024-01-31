@@ -28,6 +28,8 @@ app.set('view engine', 'ejs');
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/arquivos', express.static(path.join(__dirname, 'arquivos')));
 
+
+
 app.use(express.static(__dirname + '/public')); //para poder usar css externo
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -65,6 +67,10 @@ const rescincoRoute = require("./routes/rescincoRoute");
 const resquatroRoute = require("./routes/resquatroRoute");
 const insRoute = require("./routes/insRoute");
 const membernewRoute = require("./routes/membernewRoute");
+const gbsRoute = require("./routes/gbsRoute");
+const telmiRoute = require("./routes/telmiRoute");
+
+
 const deleteReportRoute = require("./routes/deleteReportRoute");
 const glossdelRoute = require("./routes/glossdelRoute");
 const tesmdeleteRoute = require("./routes/tesmdeleteRoute");
@@ -73,6 +79,10 @@ const deleteinsRoute = require("./routes/deleteinsRoute");
 const main = require("./routes/mainRoute");
 const insertzRoute = require("./routes/insertzRoute");
 const labRoute = require("./routes/labRoute");
+const boloRoute = require("./routes/boloRoute");
+const gametRoute = require("./routes/gametRoute");
+
+
 
 
 
@@ -115,6 +125,11 @@ app.use(skateRoute);
 app.use(homeRoute);
 app.use(gameRoute);
 app.use(main);
+app.use(gbsRoute);
+app.use(telmiRoute);
+app.use(gametRoute);
+
+
 
 app.use(artRoute);
 app.use(insertzRoute)
@@ -125,6 +140,8 @@ app.use(projectRoute);
 app.use(teamRoute);
 app.use(newsRoute);
 app.use(stateg);
+app.use(boloRoute);
+
 
 app.use(createartRoute);
 app.use(testmRoute);
@@ -132,6 +149,7 @@ app.use(archRoute);
 app.use(artsample);
 app.use(pagealt);
 app.use(obj);
+
 app.use(memberdeleteRoute)
 app.use(insNewEvRoute);
 app.use(tesmdeleteRoute)
@@ -169,6 +187,14 @@ res.json(allTitlesJSON); // Send the JSON data as a response
 }
 
 })
+app.get("/calc", async (req, res) => {
+  try {
+    res.render("calc");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.get("/getTitles", async (req, res) => {
   try {
     const allTitlesPipeline = [
@@ -609,7 +635,7 @@ app.post('/member/new', upload.single('image'), async (req, res) => {
 });
 
 // Route handler for testm submission
-app.post('/testm/new', upload.single('file'), async (req, res) => {
+app.post('/ins/new', upload.single('file'), async (req, res) => {
   try {
     const file = req.file;
     const { author, person, content, place } = req.body;

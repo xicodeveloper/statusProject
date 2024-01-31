@@ -87,7 +87,7 @@
             <% testm.forEach((testm) => { %>
                 <div class="testm-box">
                     <p><%= testm.name %></p>
-                    <form action="/testm/show/<%= testm._id %>" method="GET">
+                    <form action="/ins/show/<%= testm._id %>" method="GET">
                         <input type="hidden" name="glossId" value="<%= testm._id %>">
                         <button type="submit" onclick="confirmDelete(event)" class="btn btn-primary">Alterar</button>
                     </form>

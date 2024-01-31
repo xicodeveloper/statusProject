@@ -1,5 +1,5 @@
 const router=require("express").Router();
-router.get("/testm/new", function(req, res){
+router.get("/ins/new", function(req, res){
     res.render("createTestm")
 })
 module.exports=router;

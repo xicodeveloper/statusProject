@@ -9,7 +9,7 @@
         <div class="flexRepo" style="display: flex; flex-direction: column; gap:10px;flex: 1; width: 100%;justify-content: center;align-items: center;">
             <h1>Glosses existentes</h1>
             <% gloss.forEach((gloss) => { %>
-                <form action="/article/delete/<%= gloss._id %>" method="post">
+                <form action="/gl/delete/<%= gloss._id %>" method="post">
                     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                         <p style="color: #000; text-align: center; font-family: Montserrat; font-size: 30px; font-style: normal; font-weight: 400; line-height: 100px;"> <%= gloss.word %></p>
                         <button style="max-width: 100px;" type="submit" onclick="confirmDelete(event)" name="apagaReport" value="<%= gloss._id %>" class="btn btn-primary">Apagar</button>
